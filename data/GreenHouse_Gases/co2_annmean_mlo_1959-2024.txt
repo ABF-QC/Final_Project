@@ -42,7 +42,7 @@
 # Observations starting from December 2022 to July 4, 2023 are from a site at the 
 # Maunakea Observatories, approximately 21 miles north of the Mauna Loa Observatory.
 # 
-# year     mean      unc
+  year     mean      unc
   1959   315.98     0.12
   1960   316.91     0.12
   1961   317.64     0.12

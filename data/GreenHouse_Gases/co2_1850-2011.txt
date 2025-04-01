@@ -1,6 +1,6 @@
                Global Mean CO2 Mixing Ratios (ppm): Observations
 ----------------------------------------------------------------------------------
-Data Source,  Year, MixR   
+Data Source	Year	MixR
 Ice-Core Data Adjusted for Global Mean	1850	285.2
 Ice-Core Data Adjusted for Global Mean	1851	285.1
 Ice-Core Data Adjusted for Global Mean	1852	285

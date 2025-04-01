@@ -1,7 +1,7 @@
              Global Mean CO2 Mixing Ratio (ppm): Future Scenarios
                              Alternative Scenario        
 ----------------------------------------------------------------------------------
-Year,  MixR      
+Year	MixR
 2000	370
 2001	371.7
 2002	373.4
