@@ -9,6 +9,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
 import altair as alt
+import plotly.graph_objs as go
 
 #----------------------------
 # Adjust page config
@@ -29,10 +30,38 @@ climate_file = 'ECCC/processed/daily/daily_processed.csv'
 
 population_file = 'Population/processed/Montreal.csv'
 
-co2_file = 'ch4_1850-2099_SSP2_45.csv'
-ch4_file = 'co2_1850-2099_SSP2_45.csv'
+co2_file_weak = 'co2_1850-2099_SSP4_34.csv'
+ch4_file_weak = 'ch4_1850-2099_SSP4_34.csv'
 
-scenario = 'SSP2-45'
+co2_file_mod = 'co2_1850-2099_SSP2_45.csv'
+ch4_file_mod = 'ch4_1850-2099_SSP2_45.csv'
+
+co2_file_high = 'co2_1850-2099_SSP4_60.csv'
+ch4_file_high = 'ch4_1850-2099_SSP4_60.csv'
+
+co2_file_xtrm = 'co2_1850-2099_SSP5_80.csv'
+ch4_file_xtrm = 'ch4_1850-2099_SSP5_80.csv'
+
+
+files = {'co2_file_weak' : 'co2_1850-2099_SSP4_34.csv', 
+         'ch4_file_weak' : 'ch4_1850-2099_SSP4_34.csv',
+         'co2_file_mod' : 'co2_1850-2099_SSP2_45.csv',
+         'ch4_file_mod' : 'ch4_1850-2099_SSP2_45.csv',
+         'co2_file_high' : 'co2_1850-2099_SSP4_60.csv',
+         'ch4_file_high' : 'ch4_1850-2099_SSP4_60.csv',
+         'co2_file_xtrm' : 'co2_1850-2099_SSP5_85.csv',
+         'ch4_file_xtrm' : 'ch4_1850-2099_SSP5_85.csv'
+         }
+
+scenario = {'weak':'SSP4-34', 
+            'mod':'SSP2-45',
+            'high':'SSP4-60',
+            'xtrm':'SSP5-80'}
+
+color_scenario = {'weak':'green', 
+                  'mod':'orange',
+                  'high':'red',
+                  'xtrm':'darkred'}
 
 #----------------------------
 # Define variables
@@ -53,12 +82,41 @@ cols = ['Max Temp (°C)', 'Max Temp Flag', 'Min Temp (°C)', 'Min Temp Flag',
 #----------------------------
 # Read data files
 #----------------------------
-co2_df = pd.read_csv(os.path.join(data_dir, ghg, co2_file), index_col=0, parse_dates=True)
+for idx,sc in enumerate(scenario):
+    tmp_sc = scenario[sc].replace('-', '_')
 
-ch4_df = pd.read_csv(os.path.join(data_dir, ghg, ch4_file), index_col=0, parse_dates=True)
-ch4_df.drop(columns = 'Data Source', inplace=True)
+    for gas in ['co2', 'ch4']:
+        file = gas+'_file_'+ sc
+        if idx == 0 :
+            if gas == 'co2':
+                co2_df = pd.read_csv(os.path.join(data_dir, ghg, files[file]), index_col=0, parse_dates=True)
+                co2_df.drop(columns = 'Data Source', inplace=True)
+                co2_df.rename(columns={'CO2':sc}, inplace=True)
+            elif gas == 'ch4':
+                ch4_df = pd.read_csv(os.path.join(data_dir, ghg, files[file]), index_col=0, parse_dates=True)
+            else :
+                print('Error: Gas in not co2 or ch4')
+        else :
+            if gas == 'co2':
+                tmp = pd.read_csv(os.path.join(data_dir, ghg, files[file]), index_col=0, parse_dates=True)
+                tmp.drop(columns = 'Data Source', inplace=True)
+                tmp.rename(columns={'CO2':sc}, inplace=True)
+                co2_df = pd.concat([co2_df, tmp], axis=1)
+            elif gas == 'ch4':
+                tmp = pd.read_csv(os.path.join(data_dir, ghg, files[file]), index_col=0, parse_dates=True)
+                tmp.rename(columns={'CH4':sc}, inplace=True)
+                ch4_df = pd.concat([ch4_df, tmp], axis=1)
+            else :
+                print('Error: Gas in not co2 or ch4')
 
-pop_df = pd.read_csv(os.path.join(data_dir, population_file), index_col=0, parse_dates=True)
+
+# co2_df = pd.read_csv(os.path.join(data_dir, ghg, co2_file), index_col=0, parse_dates=True)
+# co2_df.drop(columns = 'Data Source', inplace=True)
+
+# ch4_df = pd.read_csv(os.path.join(data_dir, ghg, ch4_file), index_col=0, parse_dates=True)
+
+
+# pop_df = pd.read_csv(os.path.join(data_dir, population_file), index_col=0, parse_dates=True)
 
 wx_df = pd.read_csv(os.path.join(data_dir, climate_file), index_col=0, parse_dates=True)
 
@@ -121,6 +179,80 @@ filtered_df = df[
     (df['pclass'].isin(class_filter)) & 
     (df['embark_town'].isin(embarked_filter))
 ]
+
+
+# 
+
+fig4 = go.Figure()
+
+fig4.add_trace(go.Scatter(x=co2_df[co2_df.index < pd.to_datetime(2025, format='%Y')].index,
+                          y=co2_df[co2_df.index < pd.to_datetime(2025, format='%Y')]['weak'],
+                          mode='lines',
+                          name='Observation',
+                          line=dict(color='darkgrey')))
+
+for sc in scenario :
+    tmp_sc = scenario[sc].replace('-', '_')
+    fig4.add_trace(go.Scatter(x=co2_df[co2_df.index >= pd.to_datetime(2025, format='%Y')].index,
+                              y=co2_df[co2_df.index >= pd.to_datetime(2025, format='%Y')][sc],
+                              mode='lines',
+                              name=f'Forecast ({tmp_sc})',
+                              line=dict(color=color_scenario[sc], dash='dash')))
+
+
+
+# Update layout with title and axis ranges
+fig4.update_layout(
+     title="Carbon Dioxide Global mean Concentration (ppm) over the Years",  # Set the title here
+#     yaxis=dict(
+#         range=[tmp['Station'].min(), tmp['Station'].max() + 1]  # Adjust the Y axis minimum
+#     ),
+#     xaxis=dict(
+#         range=[tmp['Year'].min(), tmp['Year'].max() + 1]  # Adjust the X axis minimum
+#     )
+)
+
+# Display the interactive plot in Streamlit
+st.plotly_chart(fig4, use_container_width=True)
+
+
+fig3 = px.line(wx_df, x=wx_df.index, y=Tmax, title='Maximum Temperature over the Years')
+
+fig3.add_shape(type='line', x0=wx_df.index.min(),
+              x1=wx_df.index.max(), y0=30, y1=30,
+              line=dict(color='red', width=1, dash='dot'))
+
+fig3.add_shape(type='line', x0=wx_df.index.min(),
+              x1=wx_df.index.max(), y0=-20, y1=-20,
+              line=dict(color='blue', width=1, dash='dot'))
+
+fig3.add_shape(type='line', x0=wx_df.index.min(),
+              x1=wx_df.index.max(), y0=0, y1=0,
+              line=dict(color='white', width=1, dash='dot'))
+
+# Add markers and lines
+fig3.update_traces(
+     #mode='line', 
+     #marker=dict(size=4, color='red'),
+     line=dict(color='darkgrey')
+)
+
+# Only thing I figured is - I could do this 
+#fig3.add_scatter(wx_df, x=wx_df.index, y=Tmax, mode='lines')
+
+# Update layout with title and axis ranges
+fig3.update_layout(
+     title="Maximum Temperature Over The Years",  # Set the title here
+#     yaxis=dict(
+#         range=[tmp['Station'].min(), tmp['Station'].max() + 1]  # Adjust the Y axis minimum
+#     ),
+#     xaxis=dict(
+#         range=[tmp['Year'].min(), tmp['Year'].max() + 1]  # Adjust the X axis minimum
+#     )
+)
+
+# Display the interactive plot in Streamlit
+st.plotly_chart(fig3, use_container_width=True)
 
 # Display filtered dataset
 #st.write("### Filtered Dataset")
