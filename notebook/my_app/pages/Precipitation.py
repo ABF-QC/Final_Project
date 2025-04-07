@@ -22,30 +22,10 @@ data_dir = '../../data/'
 
 climate_file = 'ECCC/processed/daily/daily_processed.csv'
 
-files = {'co2_file_weak' : 'co2_1850-2099_SSP4_34.csv', 
-         'ch4_file_weak' : 'ch4_1850-2099_SSP4_34.csv',
-         'co2_file_mod' : 'co2_1850-2099_SSP2_45.csv',
-         'ch4_file_mod' : 'ch4_1850-2099_SSP2_45.csv',
-         'co2_file_high' : 'co2_1850-2099_SSP4_60.csv',
-         'ch4_file_high' : 'ch4_1850-2099_SSP4_60.csv',
-         'co2_file_xtrm' : 'co2_1850-2099_SSP5_85.csv',
-         'ch4_file_xtrm' : 'ch4_1850-2099_SSP5_85.csv'
-         }
-
-scenario = {'weak':'SSP4-34', 
-            'mod':'SSP2-45',
-            'high':'SSP4-60',
-            'xtrm':'SSP5-80'}
-
-color_scenario = {'weak':'green', 
-                  'mod':'orange',
-                  'high':'red',
-                  'xtrm':'darkred'}
-
 #----------------------------
 # Define variables
 #----------------------------
-Tmax = 'Max Temp (°C)'
+pcpn =  'Total Precip (mm)'
 
 #----------------------------
 # Read data files
@@ -88,7 +68,7 @@ stn = wx_df['Station'].unique()[0]
 #----------------------------
 # Define page's title 
 #----------------------------
-st.markdown(f"<h1 style='text-align: center;'>Daily Maximum Temperature for {stn} from {start_wx.year} to {end_wx.year}</h1>",
+st.markdown(f"<h1 style='text-align: center;'>Daily Total Precipitation for {stn} from {start_wx.year} to {end_wx.year}</h1>",
             unsafe_allow_html=True)
 
 #----------------------------
@@ -102,34 +82,34 @@ text=f"Past and future mean global concentration for carbon dioxide (CO2) and me
 st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
 
 #----------------------------
-# Create Tmax plot 
+# Create Tmin plot 
 #----------------------------
 # Create graph
 fig3 = go.Figure()
 
 # Add the scatter plot
-fig3.add_trace(go.Scatter(x=wx_df.index, y=wx_df[Tmax], name='Observation',
+fig3.add_trace(go.Scatter(x=wx_df.index, y=wx_df[pcpn], name='Observation',
                mode='markers'))
 
-# Add Temperature = 30 °C line 
+# Add Precipitation = 75 mm line 
 fig3.add_shape(type='line', x0=wx_df.index.min(),
-              x1=wx_df.index.max(), y0=30, y1=30,
+              x1=wx_df.index.max(), y0=100, y1=100,
+              line=dict(color='darkred', width=1, dash='dash'),
+              name="Precipitation = 100 mm",  
+              showlegend=True)
+
+# Add Precipitation = 75 mm line 
+fig3.add_shape(type='line', x0=wx_df.index.min(),
+              x1=wx_df.index.max(), y0=75, y1=75,
               line=dict(color='red', width=1, dash='dash'),
-              name="Temperature = 30 °C",  
+              name="Precipitation = 75 mm",  
               showlegend=True)
 
-# Add Temperature = 0 °C line 
+# Add Precipitation = 50 mm line 
 fig3.add_shape(type='line', x0=wx_df.index.min(),
-              x1=wx_df.index.max(), y0=0, y1=0,
-              line=dict(color='dodgerblue', width=1, dash='dash'),
-              name="Temperature = 0 °C",  
-              showlegend=True)
-
-# Add Temperature = -20 °C line 
-fig3.add_shape(type='line', x0=wx_df.index.min(),
-              x1=wx_df.index.max(), y0=-20, y1=-20,
-              line=dict(color='blue', width=1, dash='dash'),
-              name="Temperature = -20 °C",  
+              x1=wx_df.index.max(), y0=50, y1=50,
+              line=dict(color='lightsalmon', width=2, dash='dash'),
+              name="Precipitation = 50 mm",  
               showlegend=True)
 
 # Add markers and lines
@@ -138,15 +118,15 @@ fig3.update_traces(
      marker=dict(size=3, color='darkgrey'),
      showlegend = True,
      hovertemplate='<b>Date</b>: %{x}<br>' +
-                   '<b>Max Temperature (°C)</b>: %{y}<extra></extra>')
+                   '<b>Precipitation (mm)</b>: %{y}<extra></extra>')
 
 # Update layout with title and axis ranges
-fig3.update_layout(title={'text': 'Daily Maximum Temperature over the Years',  
+fig3.update_layout(title={'text': 'Daily Minimum Temperature Over The Years',  
                           'x': 0.5,  
                           'xanchor': 'center'},
                    title_font=dict(size=20, family='Arial'),
                    xaxis_title='Date',  
-                   yaxis_title='Max. Temperature (°C ) ')
+                   yaxis_title='Total Precipitation (mm) ')
 
 
 # Display the interactive plot in Streamlit
@@ -156,12 +136,13 @@ st.plotly_chart(fig3, use_container_width=True)
 # Create Event Frequency section (menu and plot)
 #----------------------------
 # Define type of events to choose from
-events = ['Daily Maximum Temperature higher than 35 °C ',
-          'Daily Maximum Temperature higher than 30 °C ',
-          'Daily Maximum Temperature higher than 25 °C ',
-          'Daily Maximum Temperature higher than 0 °C ',
-          'Daily Maximum Temperature lower than -15 °C ',
-          'Daily Maximum Temperature lower than -20 °C '
+events = ['Daily Total Precipitation higher than 100 mm ',
+          'Daily Total Precipitation higher than 75 mm ',
+          'Daily Total Precipitation higher than 50 mm ',
+          'Daily Total Precipitation higher than 25 mm ',
+        #   'Daily Minimum Temperature higher than 0 °C ',
+        #   'Daily Minimum Temperature lower than -20 °C ',
+        #   'Daily Minimum Temperature lower than -30 °C '
           ]
 
 # Split section into columns
@@ -180,26 +161,26 @@ with col2:
 
 # Filter the weather dataset based on the chosen event
 if event == events[0] :
-    tmp = wx_df[wx_df[Tmax] > 35.].groupby('Year').count()
+    tmp = wx_df[wx_df[pcpn] > 100.].groupby('Year').count()
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[1]:
-    tmp = wx_df[wx_df[Tmax] > 30.].groupby('Year').count()
+    tmp = wx_df[wx_df[pcpn] > 75.].groupby('Year').count()
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[2]:
-    tmp = wx_df[wx_df[Tmax] > 25.].groupby('Year').count()
+    tmp = wx_df[wx_df[pcpn] > 50.].groupby('Year').count()
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[3]:
-    tmp = wx_df[wx_df[Tmax] > 0.].groupby('Year').count()
+    tmp = wx_df[wx_df[pcpn] > 25.].groupby('Year').count()
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
-elif event == events[4]:
-    tmp = wx_df[wx_df[Tmax] < -15.].groupby('Year').count()
-    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
-elif event == events[5]:
-    tmp = wx_df[wx_df[Tmax] < -20.].groupby('Year').count()
-    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+# elif event == events[4]:
+#     tmp = wx_df[wx_df[Tmin] < -20.].groupby('Year').count()
+#     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+# elif event == events[5]:
+#     tmp = wx_df[wx_df[Tmin] < -30.].groupby('Year').count()
+#     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 else :
     pass
-
+st.write(tmp)
 #----------------------------
 # Create event frequency plot 
 #----------------------------
@@ -220,8 +201,8 @@ fig.update_layout(title={'text': f'Frequency of {event} over the Years',
                    title_font=dict(size=20, family='Arial'),
                    xaxis_title='Date',  
                    yaxis_title='# of events',
-                   yaxis=dict(range=[tmp['Count'].min(), tmp['Count'].max()]),
-                   xaxis=dict(range=[wx_df.index.year.min(), wx_df.index.year.max()]))
+                   yaxis=dict(range=[0, tmp['Count'].max()]),
+                   xaxis=dict(range=[wx_df.index.year.min()-2, wx_df.index.year.max()+2]))
 
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig, use_container_width=True)

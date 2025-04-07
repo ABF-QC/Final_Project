@@ -80,7 +80,6 @@ for year in [start_wx, end_wx] :
     else :
         print(f'Full year. Not removing {yr} from obs dataframe.')
 
-
 #----------------------------
 # Define station name
 #----------------------------
@@ -101,29 +100,6 @@ text=f"Past and future mean global concentration for carbon dioxide (CO2) and me
        we will be able to access past and future evolution of each greenhouse gas through time.</br></br>"
 
 st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
-
-
-# Show dataset
-# if st.checkbox("Show Raw Dataset"):
-#     st.write(df)
-
-# Sidebar for user input
-# st.sidebar.header("")
-# sex_filter = st.sidebar.multiselect("Select Gender", options=df['sex'].unique(), default=df['sex'].unique())
-# class_filter = st.sidebar.multiselect("Select Class (Pclass)", options=df['pclass'].unique(), default=df['pclass'].unique())
-# embarked_filter = st.sidebar.multiselect("Select Embarkation Point", options=df['embark_town'].dropna().unique(), default=df['embark_town'].unique())
-
-# # Filter dataset based on selections
-# filtered_df = df[
-#     (df['sex'].isin(sex_filter)) & 
-#     (df['pclass'].isin(class_filter)) & 
-#     (df['embark_town'].isin(embarked_filter))
-# ]
-
-
-# 
-
-
 
 #----------------------------
 # Create Tmin plot 
@@ -175,6 +151,80 @@ fig3.update_layout(title={'text': 'Daily Minimum Temperature Over The Years',
 
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig3, use_container_width=True)
+
+#----------------------------
+# Create Event Frequency section (menu and plot)
+#----------------------------
+# Define type of events to choose from
+events = ['Daily Minimum Temperature higher than 25 °C ',
+          'Daily Minimum Temperature higher than 20 °C ',
+          'Daily Minimum Temperature higher than 15 °C ',
+          'Daily Minimum Temperature higher than 0 °C ',
+          'Daily Minimum Temperature lower than -20 °C ',
+          'Daily Minimum Temperature lower than -30 °C '
+          ]
+
+# Split section into columns
+col1, col2, col3 = st.columns(3)
+
+# Add selectbox in the first column
+with col1:
+    text=f"Select the weather event:"
+
+    st.write(f"<h5 style='text-align: left;'></br></br>{text}</h5>", unsafe_allow_html=True)
+    
+    event = st.selectbox('', options=events, index=1, label_visibility="collapsed")
+
+with col2:
+    pass
+
+# Filter the weather dataset based on the chosen event
+if event == events[0] :
+    tmp = wx_df[wx_df[Tmin] > 25.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[1]:
+    tmp = wx_df[wx_df[Tmin] > 20.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[2]:
+    tmp = wx_df[wx_df[Tmin] > 15.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[3]:
+    tmp = wx_df[wx_df[Tmin] > 0.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[4]:
+    tmp = wx_df[wx_df[Tmin] < -20.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[5]:
+    tmp = wx_df[wx_df[Tmin] < -30.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+else :
+    pass
+
+#----------------------------
+# Create event frequency plot 
+#----------------------------
+# Create graph
+fig = go.Figure()
+
+# Add bar plot
+fig.add_trace(go.Bar(x=tmp['Year'], 
+                     y=tmp['Count'],
+                     name='Rain Events',
+                     hovertemplate='<b>Year</b>: %{x}<br>' +
+                                   '<b># of events</b>: %{y}<extra></extra>'))
+
+# Adjust/set title and axis
+fig.update_layout(title={'text': f'Frequency of {event} over the Years',  
+                          'x': 0.5,  
+                          'xanchor': 'center'},
+                   title_font=dict(size=20, family='Arial'),
+                   xaxis_title='Date',  
+                   yaxis_title='# of events',
+                   yaxis=dict(range=[tmp['Count'].min(), tmp['Count'].max()]),
+                   xaxis=dict(range=[wx_df.index.year.min(), wx_df.index.year.max()]))
+
+# Display the interactive plot in Streamlit
+st.plotly_chart(fig, use_container_width=True)
 
 #----------------------------
 # Add Sources
