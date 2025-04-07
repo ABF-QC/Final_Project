@@ -139,11 +139,7 @@ st.plotly_chart(fig3, use_container_width=True)
 events = ['Daily Total Precipitation higher than 100 mm ',
           'Daily Total Precipitation higher than 75 mm ',
           'Daily Total Precipitation higher than 50 mm ',
-          'Daily Total Precipitation higher than 25 mm ',
-        #   'Daily Minimum Temperature higher than 0 °C ',
-        #   'Daily Minimum Temperature lower than -20 °C ',
-        #   'Daily Minimum Temperature lower than -30 °C '
-          ]
+          'Daily Total Precipitation higher than 25 mm ']
 
 # Split section into columns
 col1, col2, col3 = st.columns(3)
@@ -161,26 +157,20 @@ with col2:
 
 # Filter the weather dataset based on the chosen event
 if event == events[0] :
-    tmp = wx_df[wx_df[pcpn] > 100.].groupby('Year').count()
+    tmp = wx_df.groupby('Year').agg(Count=(pcpn, lambda x: (x > 100.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[1]:
-    tmp = wx_df[wx_df[pcpn] > 75.].groupby('Year').count()
+    tmp = wx_df.groupby('Year').agg(Count=(pcpn, lambda x: (x > 75.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[2]:
-    tmp = wx_df[wx_df[pcpn] > 50.].groupby('Year').count()
+    tmp = wx_df.groupby('Year').agg(Count=(pcpn, lambda x: (x > 50.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[3]:
-    tmp = wx_df[wx_df[pcpn] > 25.].groupby('Year').count()
+    tmp = wx_df.groupby('Year').agg(Count=(pcpn, lambda x: (x > 25.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
-# elif event == events[4]:
-#     tmp = wx_df[wx_df[Tmin] < -20.].groupby('Year').count()
-#     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
-# elif event == events[5]:
-#     tmp = wx_df[wx_df[Tmin] < -30.].groupby('Year').count()
-#     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 else :
     pass
-st.write(tmp)
+
 #----------------------------
 # Create event frequency plot 
 #----------------------------

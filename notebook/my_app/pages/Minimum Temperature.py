@@ -180,22 +180,22 @@ with col2:
 
 # Filter the weather dataset based on the chosen event
 if event == events[0] :
-    tmp = wx_df[wx_df[Tmin] > 25.].groupby('Year').count()
+    tmp = wx_df.groupby('Year').agg(Count=(Tmin, lambda x: (x > 25.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[1]:
-    tmp = wx_df[wx_df[Tmin] > 20.].groupby('Year').count()
+    tmp = wx_df.groupby('Year').agg(Count=(Tmin, lambda x: (x > 20.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[2]:
-    tmp = wx_df[wx_df[Tmin] > 15.].groupby('Year').count()
+    tmp = wx_df.groupby('Year').agg(Count=(Tmin, lambda x: (x > 15.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[3]:
-    tmp = wx_df[wx_df[Tmin] > 0.].groupby('Year').count()
+    tmp = wx_df.groupby('Year').agg(Count=(Tmin, lambda x: (x > 0.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[4]:
-    tmp = wx_df[wx_df[Tmin] < -20.].groupby('Year').count()
+    tmp = wx_df.groupby('Year').agg(Count=(Tmin, lambda x: (x < -20.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 elif event == events[5]:
-    tmp = wx_df[wx_df[Tmin] < -30.].groupby('Year').count()
+    tmp = wx_df.groupby('Year').agg(Count=(Tmin, lambda x: (x < -30.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 else :
     pass
@@ -221,7 +221,7 @@ fig.update_layout(title={'text': f'Frequency of {event} over the Years',
                    xaxis_title='Date',  
                    yaxis_title='# of events',
                    yaxis=dict(range=[tmp['Count'].min(), tmp['Count'].max()]),
-                   xaxis=dict(range=[wx_df.index.year.min(), wx_df.index.year.max()]))
+                   xaxis=dict(range=[wx_df.index.year.min()-2, wx_df.index.year.max()+2]))
 
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig, use_container_width=True)
