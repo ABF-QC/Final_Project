@@ -40,17 +40,17 @@ st.markdown(f"<h1 style='text-align: center;'> Montreal's Population Past and Fu
 text=f"Population density significantly impact the land surface of a city. \
     The surface type consequently influence the surface albedo, \
     its capacity to retain moisture, and so much more. \
-    When to population is dense enough and has change the surface type from vegetation to \
+    When the population is dense enough and has changed the surface type from mainly vegetation to \
     a dense building surface area, the urban heat island effect is created over the urban area. \
-    It means that the urban area accumulate heat more than its surroundings rural area and, consequently, \
-    the maximum temperature and minimum temperature will frequently be warmer in the urban area \
-    than in the surroundings rural area. </br></br> Here we can have a look at the past and\
+    The Urban Heat Island Effect means that the urban area accumulate more heat than its surroundings rural areas and, consequently, \
+    the maximum temperature and minimum temperature will generally be warmer in the urban area \
+    than in the surroundings rural areas. </br></br> Here we can have a look at the past and\
     predicted data for Montreal's population.</br></br>"
 
 st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
 
 #----------------------------
-# Create Greenhouse gases plot (CO2)
+# Create Population plot 
 #----------------------------
 pop_df['Year'] = pop_df.index.year
 pop_df = pop_df.astype(int)
@@ -93,3 +93,14 @@ fig4.update_layout(title={'text': "Montreal's Population over the Years",
 
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig4, use_container_width=True)
+
+#----------------------------
+# Add Sources
+#----------------------------
+st.markdown("""
+Sources:
+  - [Past data](https://fr.wikipedia.org/wiki/Montréal#cite_note-122)
+  - [Predicted data](https://statistique.quebec.ca/en/fichier/perspectives-demographiques-quebec-et-regions-2021-2071-edition-2024.pdf)
+""")
+
+st.write(f"<p style='text-align: left;'></br></br></p>", unsafe_allow_html=True)

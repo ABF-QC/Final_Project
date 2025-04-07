@@ -186,5 +186,17 @@ fig4.update_layout(title={'text': 'Methane Global mean Concentration (ppm) over 
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig4, use_container_width=True)
 
+#----------------------------
+# Add Sources
+#----------------------------
+st.markdown("""
+Sources:
+- [Carbon dioxide (C02) Past data (1850-2011)](https://data.giss.nasa.gov/modelforce/ghgases/Fig1A.ext.txt)
+- [Carbon dioxide (C02) Past data (1959-2024)](https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt)
+- [Methane (CH4) Past data (1010-1992)](https://sealevel.info/EthCH498B.txt)
+- [Methane(CH4) Past data (1884-2023)](https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_annmean_gl.txt)
+- [Carbon dioxide (C02) and Methane (CH4) Predicted data](https://greenhousegases.science.unimelb.edu.au/#!/view)
+""")
 
+st.write(f"<p style='text-align: left;'></br></br></p>", unsafe_allow_html=True)
 

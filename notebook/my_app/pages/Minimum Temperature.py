@@ -142,18 +142,18 @@ fig3.add_shape(type='line', x0=wx_df.index.min(),
               name="Temperature = 20 °C",  
               showlegend=True)
 
-# Add Temperature = -20 °C line 
-fig3.add_shape(type='line', x0=wx_df.index.min(),
-              x1=wx_df.index.max(), y0=-30, y1=-30,
-              line=dict(color='blue', width=1, dash='dash'),
-              name="Temperature = -30 °C",  
-              showlegend=True)
-
 # Add Temperature = 0 °C line 
 fig3.add_shape(type='line', x0=wx_df.index.min(),
               x1=wx_df.index.max(), y0=0, y1=0,
               line=dict(color='dodgerblue', width=1, dash='dash'),
               name="Temperature = 0 °C",  
+              showlegend=True)
+
+# Add Temperature = -20 °C line 
+fig3.add_shape(type='line', x0=wx_df.index.min(),
+              x1=wx_df.index.max(), y0=-30, y1=-30,
+              line=dict(color='blue', width=1, dash='dash'),
+              name="Temperature = -30 °C",  
               showlegend=True)
 
 # Add markers and lines
@@ -175,3 +175,14 @@ fig3.update_layout(title={'text': 'Daily Minimum Temperature Over The Years',
 
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig3, use_container_width=True)
+
+#----------------------------
+# Add Sources
+#----------------------------
+st.markdown("""
+Sources:
+  - [Past data](https://dd.weather.gc.ca/climate/observations/)
+  - [Predicted data](https://github.com/ABF-QC/Final_Project)
+""")
+
+st.write(f"<p style='text-align: left;'></br></br></p>", unsafe_allow_html=True)
