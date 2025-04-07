@@ -80,7 +80,6 @@ for year in [start_wx, end_wx] :
     else :
         print(f'Full year. Not removing {yr} from obs dataframe.')
 
-
 #----------------------------
 # Define station name
 #----------------------------
@@ -101,29 +100,6 @@ text=f"Past and future mean global concentration for carbon dioxide (CO2) and me
        we will be able to access past and future evolution of each greenhouse gas through time.</br></br>"
 
 st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
-
-
-# Show dataset
-# if st.checkbox("Show Raw Dataset"):
-#     st.write(df)
-
-# Sidebar for user input
-# st.sidebar.header("")
-# sex_filter = st.sidebar.multiselect("Select Gender", options=df['sex'].unique(), default=df['sex'].unique())
-# class_filter = st.sidebar.multiselect("Select Class (Pclass)", options=df['pclass'].unique(), default=df['pclass'].unique())
-# embarked_filter = st.sidebar.multiselect("Select Embarkation Point", options=df['embark_town'].dropna().unique(), default=df['embark_town'].unique())
-
-# # Filter dataset based on selections
-# filtered_df = df[
-#     (df['sex'].isin(sex_filter)) & 
-#     (df['pclass'].isin(class_filter)) & 
-#     (df['embark_town'].isin(embarked_filter))
-# ]
-
-
-# 
-
-
 
 #----------------------------
 # Create Tmax plot 
@@ -165,7 +141,7 @@ fig3.update_traces(
                    '<b>Max Temperature (°C)</b>: %{y}<extra></extra>')
 
 # Update layout with title and axis ranges
-fig3.update_layout(title={'text': 'Daily Maximum Temperature Over The Years',  
+fig3.update_layout(title={'text': 'Daily Maximum Temperature over the Years',  
                           'x': 0.5,  
                           'xanchor': 'center'},
                    title_font=dict(size=20, family='Arial'),
@@ -176,79 +152,78 @@ fig3.update_layout(title={'text': 'Daily Maximum Temperature Over The Years',
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig3, use_container_width=True)
 
-# chart = alt.Chart(tmp).mark_line().encode(
-#     x='Year:O',
-#     y=alt.Y('Station:Q', scale=alt.Scale(domain=[ tmp['Station'].min(), tmp['Station'].max() + 1]))  # Adjust min here
-# ).properties(
-#     width=700,
-#     height=400
-# )
+#----------------------------
+# Create Event Frequency section (menu and plot)
+#----------------------------
+# Define type of events to choose from
+events = ['Daily Maximum Temperature higher than 35 °C ',
+          'Daily Maximum Temperature higher than 30 °C ',
+          'Daily Maximum Temperature higher than 25 °C ',
+          'Daily Maximum Temperature higher than 0 °C ',
+          'Daily Maximum Temperature higher than -15 °C ',
+          'Daily Maximum Temperature higher than -20 °C '
+          ]
 
-# st.altair_chart(chart, use_container_width=True)
-# Viz 1: Survival countplot
-# st.subheader("Survival Count")
-# survival_count = filtered_df['survived'].value_counts()
-# st.line_chart(tmp['Station'])
-# #st.bar_chart(survival_count.rename(index={0: 'Did not survive', 1: 'Survived'}))
+# Split section into columns
+col1, col2, col3, col4, col5 = st.columns(5)
 
-# # Viz 2: Survival by gender
-# st.subheader("Survival Rate by Gender")
+# Add selectbox in the first column
+with col1:
+    text=f"Select the weather event:"
 
-# gender_survival = filtered_df.groupby('sex')['survived'].mean().reset_index()
+    st.write(f"<h5 style='text-align: left;'></br></br>{text}</h5>", unsafe_allow_html=True)
+    
+    event = st.selectbox('', options=events, index=1, label_visibility="collapsed")
 
-# fig = px.pie(
-#     gender_survival,
-#     names='sex',
-#     values='survived',
-#     title="Survival Rate by Gender",
-# )
+with col2:
+    pass
 
-# # Display the pie chart
-# st.plotly_chart(fig)
+# Filter the weather dataset based on the chosen event
+if event == events[0] :
+    tmp = wx_df[wx_df[Tmax] > 35.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[1]:
+    tmp = wx_df[wx_df[Tmax] > 30.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[2]:
+    tmp = wx_df[wx_df[Tmax] > 25.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[3]:
+    tmp = wx_df[wx_df[Tmax] > 0.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[4]:
+    tmp = wx_df[wx_df[Tmax] < -15.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[5]:
+    tmp = wx_df[wx_df[Tmax] < -20.].groupby('Year').count()
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+else :
+    pass
 
-# Viz 3: Age distribution
-# Prepare data for histogram
-#age_bins = pd.cut(filtered_df['age'].dropna(), bins=20)  # Create 20 bins for ages
-#hist_data = age_bins.value_counts(sort=False)  # Count ages in each bin
+#----------------------------
+# Create event frequency plot 
+#----------------------------
+# Create graph
+fig = go.Figure()
 
-# Convert to DataFrame for plotting
-#hist_df = pd.DataFrame({
-#    'Age Range': [f"{int(bin.left)}-{int(bin.right)}" for bin in hist_data.index],  # Bin ranges as labels
-#    'Count': hist_data.values
-#})
+# Add bar plot
+fig.add_trace(go.Bar(x=tmp['Year'], 
+                     y=tmp['Count'],
+                     name='Rain Events',
+                     hovertemplate='<b>Year</b>: %{x}<br>' +
+                                   '<b># of events</b>: %{y}<extra></extra>'))
 
-# Display histogram using Streamlit
-#st.bar_chart(hist_df.set_index('Age Range'))
+# Adjust/set title and axis
+fig.update_layout(title={'text': f'Frequency of {event} over the Years',  
+                          'x': 0.5,  
+                          'xanchor': 'center'},
+                   title_font=dict(size=20, family='Arial'),
+                   xaxis_title='Date',  
+                   yaxis_title='# of events',
+                   yaxis=dict(range=[tmp['Count'].min(), tmp['Count'].max()]))
 
-
-
-# tmp = wx_df[wx_df['Total Precip (mm)'] > 75.].groupby('Year').count()
-# tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
-# #tmp['Year'] = pd.to_datetime(tmp['Year'], format='%Y')
-# #tmp.set_index('Year', inplace=True)
-# #st.write(tmp)
-
-# fig = go.Figure()
-# fig.add_trace(go.Bar(x=tmp['Year'], 
-#                      y=tmp['Count'],
-#                      name='Rain Events',
-#                      hovertemplate='<b>Year</b>: %{x}<br>' +
-#                                    '<b># of events</b>: %{y}<extra></extra>'))
-
-# fig.update_layout(
-#      yaxis=dict(range=[0, tmp['Count'].max()],
-#                 tickmode='linear',     
-#                 dtick=1),
-#      #xaxis=dict(range=[tmp.index.min(), tmp.index.max()],
-#      #           tickmode='linear',     
-#      #           dtick=1),
-#      title="Quantity of daily rain event > 75 mm per year"
-# )
-
-# st.plotly_chart(fig, use_container_width=True)
-
-#st.bar_chart(tmp['Station'])
-
+# Display the interactive plot in Streamlit
+st.plotly_chart(fig, use_container_width=True)
 
 #----------------------------
 # Add Sources
