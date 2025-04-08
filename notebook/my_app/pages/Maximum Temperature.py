@@ -22,20 +22,19 @@ data_dir = '../../data/'
 
 climate_file = 'ECCC/processed/daily/daily_processed.csv'
 
-files = {'co2_file_weak' : 'co2_1850-2099_SSP4_34.csv', 
-         'ch4_file_weak' : 'ch4_1850-2099_SSP4_34.csv',
-         'co2_file_mod' : 'co2_1850-2099_SSP2_45.csv',
-         'ch4_file_mod' : 'ch4_1850-2099_SSP2_45.csv',
-         'co2_file_high' : 'co2_1850-2099_SSP4_60.csv',
-         'ch4_file_high' : 'ch4_1850-2099_SSP4_60.csv',
-         'co2_file_xtrm' : 'co2_1850-2099_SSP5_85.csv',
-         'ch4_file_xtrm' : 'ch4_1850-2099_SSP5_85.csv'
+forecast_dir = os.path.join(data_dir, 'Forecast')
+
+files = {'weak' : 'Temperature_SSP4-34', 
+         'mod' : 'Temperature_SSP2-45',
+         'high' : 'Temperature_SSP4-60',
+         #'xtrm' : 'Temperature_SSP5-85',
          }
 
 scenario = {'weak':'SSP4-34', 
             'mod':'SSP2-45',
             'high':'SSP4-60',
-            'xtrm':'SSP5-80'}
+            #'xtrm':'SSP5-80'
+            }
 
 color_scenario = {'weak':'green', 
                   'mod':'orange',
@@ -46,11 +45,26 @@ color_scenario = {'weak':'green',
 # Define variables
 #----------------------------
 Tmax = 'Max Temp (°C)'
+Tmin =  'Min Temp (°C)'
 
 #----------------------------
 # Read data files
 #----------------------------
 wx_df = pd.read_csv(os.path.join(data_dir, climate_file), index_col=0, parse_dates=True)
+
+for idx,sc in enumerate(scenario):
+
+    file = files[sc]
+
+    if idx == 0 :
+        fcst_df = pd.read_csv(os.path.join(forecast_dir, file), index_col=0, parse_dates=True)
+        fcst_df.rename(columns={Tmax+'model':sc}, inplace=True)
+        fcst_df.drop(columns=[Tmin+'model'], inplace=True)
+    else :
+        tmp = pd.read_csv(os.path.join(forecast_dir, file), index_col=0, parse_dates=True)
+        tmp.rename(columns={Tmax+'model':sc}, inplace=True)       
+        tmp.drop(columns=[Tmin+'model'], inplace=True)
+        fcst_df = pd.concat([fcst_df, tmp], axis=1)
 
 #----------------------------
 # Remove incomplete start 
@@ -225,6 +239,62 @@ fig.update_layout(title={'text': f'Frequency of {event} over the Years',
 
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig, use_container_width=True)
+
+#----------------------------
+# Create Tmax plot 
+#----------------------------
+# Create graph
+fig3 = go.Figure()
+
+for idx,sc in enumerate(scenario):
+
+    # Add the scatter plot
+    fig3.add_trace(go.Scatter(x=fcst_df.index,
+                              y=fcst_df[sc], 
+                              name='Forecast'+f' {scenario[sc]}',
+                              mode='lines',
+                              line=dict(color=color_scenario[sc])))
+
+# Add Temperature = 30 °C line 
+# fig3.add_shape(type='line', x0=wx_df.index.min(),
+#               x1=wx_df.index.max(), y0=30, y1=30,
+#               line=dict(color='red', width=1, dash='dash'),
+#               name="Temperature = 30 °C",  
+#               showlegend=True)
+
+# # Add Temperature = 0 °C line 
+# fig3.add_shape(type='line', x0=wx_df.index.min(),
+#               x1=wx_df.index.max(), y0=0, y1=0,
+#               line=dict(color='dodgerblue', width=1, dash='dash'),
+#               name="Temperature = 0 °C",  
+#               showlegend=True)
+
+# # Add Temperature = -20 °C line 
+# fig3.add_shape(type='line', x0=wx_df.index.min(),
+#               x1=wx_df.index.max(), y0=-20, y1=-20,
+#               line=dict(color='blue', width=1, dash='dash'),
+#               name="Temperature = -20 °C",  
+#               showlegend=True)
+
+# Add markers and lines
+fig3.update_traces(
+    #  mode='markers', 
+    #  marker=dict(size=3, color='darkgrey'),
+     showlegend = True,
+     hovertemplate='<b>Date</b>: %{x}<br>' +
+                   '<b>Max Temperature (°C)</b>: %{y}<extra></extra>')
+
+# Update layout with title and axis ranges
+fig3.update_layout(title={'text': 'Daily Maximum Temperature Forecast by Recurrent Neural Network ())',  
+                          'x': 0.5,  
+                          'xanchor': 'center'},
+                   title_font=dict(size=20, family='Arial'),
+                   xaxis_title='Date',  
+                   yaxis_title='Max. Temperature (°C ) ')
+
+
+# Display the interactive plot in Streamlit
+st.plotly_chart(fig3, use_container_width=True)
 
 #----------------------------
 # Add Sources
