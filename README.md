@@ -230,6 +230,49 @@ Once the model was well-trained, its final performance were evaluated by looking
 
 ---
 
+## Analysis - Climate change impact for downtown Montreal  
+
+**Maximum Temperature**
+
+- Extreme temperature, above 35 °C, is not new. It used to happens once every 15 to 40 years. Since the 2000's, the warm cycle last la few years, producing such extreme temperature a few years in a row.
+- There are significantly more days with temperature above 30°C, since the 2000's.
+- There are more days above 0 °C. 
+
+</br>
+
+![](images/Tmax_30.png)
+
+</br>
+
+![](images/Tmax_below30.png)
+
+</br>
+
+The impact of climate change on the maximum temperature have a huge impact on a person health, its communities and the industries sensible to weather. More days with heat waves mean more health impact on vulnerable communities, and more stress on first line responders. Less days with temperatures below zero means less rentability for winter outdoors sporting facilities.
+
+
+</br>
+
+**Maximum Temperature**
+
+- Extreme precipitation events, such as more than 100 mm of precipitation in a day, are things that did not existed prior 1980. 
+- Important but less severe events, such as more than 50 mm of precipitation in day, happens more frequently since the 2000's.
+
+![](images/daily_pcpn.png)
+
+The impact of climate change on daily precipitation amount is an important aspect of city planning. The city has to become more resilient to extreme precipitation events and adapt its infrastructure to be able to absorb important amount of rain in a short amount of time.  
+
+</br>
+
+**Precipitation**
+
+- Extreme precipitation events, such as more than 100 mm of precipitation in a day, are things that did not existed prior 1980. 
+- Important but less severe events, such as more than 50 mm of precipitation in day, happens more frequently since the 2000's.
+
+![](images/daily_pcpn.png)
+
+The impact of climate change in daily precipitation amount is an important aspect of city planning. The city has to become more resilient to extreme precipitation events and adapt its infrastructure to be able to absorb important amount of rain in a short amount of time.  
+
 ## Results & Visualization / 🚀 App Deployment
 
 ### Visualization
