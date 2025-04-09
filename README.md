@@ -38,6 +38,14 @@ The forecast of the GHG are based from the Shared Socioeconomic Pathways (SSPs),
 
 </br>
 
+![](images/CO2.png)
+
+</br>
+
+![](images/CH4.png)
+
+</br>
+
 By using the CO2 and CH4 global mean concentration as an input features of my RNN model, I am hoping that it will be able to establish the connection between the GHG curves and the temperature. Thus, in its own way see the GHG impact on climate change.
 
 </br>
@@ -45,6 +53,12 @@ By using the CO2 and CH4 global mean concentration as an input features of my RN
 **Montreal's Population**
 
 Population density significantly impact the land surface of a city. The surface type consequently influence the surface albedo, its capacity to retain moisture, and so much more. When the population is dense enough and has changed the surface type from mainly vegetation to a dense building surface area, the urban heat island effect is created over the urban area. The Urban Heat Island Effect means that the urban area accumulate more heat than its surroundings rural areas and, consequently, the maximum temperature and minimum temperature will generally be warmer in the urban area than in the surroundings rural areas.
+
+</br>
+
+![](images/Population.png)
+
+</br>
 
 By using the Montreal's population as an input feature of my RNN model, I am hoping that it will be able to establish the connection between the population curve and the temperature. Thus, in its own way see the Urban Heat Island Effect.
 
