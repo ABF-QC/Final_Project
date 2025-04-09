@@ -108,10 +108,21 @@ st.markdown(f"<h1 style='text-align: center;'>Daily Maximum Temperature for {stn
 #----------------------------
 # Add text
 #----------------------------
-text=f"Past and future mean global concentration for carbon dioxide (CO2) and methane (CH4),\
-       even though there are more greenhouse gases contributing to climate change than these \
-       two, will be shown through the help of a timeseries graph.</br></br> With the help of these graph, \
-       we will be able to access past and future evolution of each greenhouse gas through time.</br></br>"
+text=f"At first, this page will allow you to navigate through the history of \
+       maximum temperature of downtown Montreal spanning more than a century.\
+       </br></br> Maximum temperature are quite important, since they can have \
+       a significant impact on someone health and safety. Temperature above 30 °C\
+       lead to an increase risk of heat stroke and can have an sigificant health\
+       impact on vulnerable communities. At the other end of the spectrum, maximum \
+       temperature lower than -20 °C can lead to a frostbite on exposed skin very rapidly \
+       and can be a significant health hazard for vulnerable communities.</br></br> \
+       The second portion of the page will allow you to explore the yearly frequency \
+       of some weather events regarding the maximum temperature and see their evolution\
+       over the last century.</br></br> Finally, the last portion of the page will give\
+       you an insight of what maximum temperature could look like over the next 50 years\
+       given various greenhouse gases scenario from the Shared Socioeconomic Pathways (SSPs)\
+       of the IPCC Sixth Assessment Report on climate change of 2021.</br></br>\
+       "
 
 st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
 
@@ -255,31 +266,8 @@ for idx,sc in enumerate(scenario):
                               mode='lines',
                               line=dict(color=color_scenario[sc])))
 
-# Add Temperature = 30 °C line 
-# fig3.add_shape(type='line', x0=wx_df.index.min(),
-#               x1=wx_df.index.max(), y0=30, y1=30,
-#               line=dict(color='red', width=1, dash='dash'),
-#               name="Temperature = 30 °C",  
-#               showlegend=True)
-
-# # Add Temperature = 0 °C line 
-# fig3.add_shape(type='line', x0=wx_df.index.min(),
-#               x1=wx_df.index.max(), y0=0, y1=0,
-#               line=dict(color='dodgerblue', width=1, dash='dash'),
-#               name="Temperature = 0 °C",  
-#               showlegend=True)
-
-# # Add Temperature = -20 °C line 
-# fig3.add_shape(type='line', x0=wx_df.index.min(),
-#               x1=wx_df.index.max(), y0=-20, y1=-20,
-#               line=dict(color='blue', width=1, dash='dash'),
-#               name="Temperature = -20 °C",  
-#               showlegend=True)
-
 # Add markers and lines
 fig3.update_traces(
-    #  mode='markers', 
-    #  marker=dict(size=3, color='darkgrey'),
      showlegend = True,
      hovertemplate='<b>Date</b>: %{x}<br>' +
                    '<b>Max Temperature (°C)</b>: %{y}<extra></extra>')

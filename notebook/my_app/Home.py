@@ -64,16 +64,28 @@ text = f"In this app, you will navigate through past data for {stn} from {start_
 st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
 
 
-text = f"You will be able to see historic data for the maximum temperature, minimum temperature and precipitation. The ultimate goal of this application is to be able to visualize the weather's evolution of the last century for {stn}.</br></br> In addition, you will be able to visualize the frequency of severe events trough time. For example, the yearly occurence of temperature higher than 30 °C or the yearly occurency of daily precpitation amount greater than 75 mm."
+text = f"You will be able to see historic data for the maximum temperature, \
+    minimum temperature and precipitation. The ultimate goal of this \
+    application is to be able to visualize the weather's evolution over \
+    the last century for {stn}.</br></br> In addition, you will be able \
+    to visualize the frequency of severe events trough time. For example,\
+    the yearly occurence of temperature higher than 30 °C or the yearly \
+    occurency of daily precpitation amount greater than 75 mm."
 
-st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
+st.write(f"<p style='text-align: left;'></br>{text}</p>", unsafe_allow_html=True)
 
 
-text = f"Another important feature of this app is the climate forecast visualizer for different global warming scenarios. You will be able to see the daily maximum and minimum temperatures prediction for four different global warming scenario. The prediction were produced from a Recurrent Neural Network (RNN) model build from the past data of mean global carbone dioxide concentration, mean global methane concentration, Montreal's population and {stn}'s maximum/minimum daily temperatures."
+text = f"Another important feature of this app is the climate forecast\
+    visualizer for different global warming scenarios. You will be able to \
+    see the daily maximum and minimum temperatures prediction for four \
+    different global warming scenarios. The prediction were produced from \
+    a Recurrent Neural Network (RNN) model build from the past data of mean \
+    global carbone dioxide concentration, mean global methane concentration, \
+    Montreal's population and {stn}'s maximum/minimum daily temperatures from 1892 to 2025."
 
-st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
+st.write(f"<p style='text-align: left;'></br>{text}</p>", unsafe_allow_html=True)
 
 
 text = f"Use the sidebar to navigate between pages."
 
-st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
+st.write(f"<p style='text-align: left;'></br>{text}</p>", unsafe_allow_html=True)

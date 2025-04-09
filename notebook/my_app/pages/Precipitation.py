@@ -74,10 +74,16 @@ st.markdown(f"<h1 style='text-align: center;'>Daily Total Precipitation for {stn
 #----------------------------
 # Add text
 #----------------------------
-text=f"Past and future mean global concentration for carbon dioxide (CO2) and methane (CH4),\
-       even though there are more greenhouse gases contributing to climate change than these \
-       two, will be shown through the help of a timeseries graph.</br></br> With the help of these graph, \
-       we will be able to access past and future evolution of each greenhouse gas through time.</br></br>"
+text=f"At first, this page will allow you to navigate through the history of \
+       daily precipitation amount for downtown Montreal spanning more than a century.\
+       </br></br> Precipitation are important due to the devastating impacts that extreme precipitation events\
+        can have on someone live or lifelihood. For example, little precipitation over \
+        a long period can lead to drought impacting farming, energy sector, etc. While extreme \
+        precipitation can lead to flood destroying houses, communities, causing landslides and unfortunately even life loss.\
+       </br></br>The second portion of the page will allow you to explore the yearly frequency \
+       of such extreme precipitation events and, most importantly, see their evolution\
+       over the last century.</br></br>\
+        " 
 
 st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
 
@@ -196,6 +202,9 @@ fig.update_layout(title={'text': f'Frequency of {event} over the Years',
 
 # Display the interactive plot in Streamlit
 st.plotly_chart(fig, use_container_width=True)
+
+
+
 
 #----------------------------
 # Add Sources

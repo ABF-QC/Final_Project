@@ -45,6 +45,11 @@ color_scenario = {'weak':'green',
                   'high':'red',
                   'xtrm':'darkred'}
 
+text_scenario = {'SSP4-34' : 'Intermediate GHG emissions with a desire to implement climate policies', 
+                 'SSP2-45' : 'Low to intermediate GHG emissions with large social disparities',
+                 'SSP4-60' : 'Intermediate to high GHG emissions with deep social inequalities',
+                 'SSP5-80' : 'Very high GHG emissions (worst case scenario)'}
+
 #----------------------------
 # Read data files
 #----------------------------
@@ -88,11 +93,19 @@ st.markdown(f"<h1 style='text-align: center;'>Greenhouse Gases Past and Futur</h
 # Add text
 #----------------------------
 text=f"Past and future mean global concentration for carbon dioxide (CO2) and methane (CH4),\
-       even though there are more greenhouse gases contributing to climate change than these \
+       even though there are more greenhouse gases (GHG) contributing to climate change than these \
        two, will be shown through the help of a timeseries graph.</br></br> With the help of these graph, \
-       we will be able to access past and future evolution of each greenhouse gas through time.</br></br>"
+       we will be able to access past and future evolution of each GHG through \
+       time.</br></br> The forecast of the GHG are based from the Shared Socioeconomic Pathways (SSPs), \
+       which are climate change scenarios of projected socioeconomic global changes up to 2100 as defined in the \
+       IPCC Sixth Assessment Report on climate change in 2021. They are used to derive GHG emissions \
+       scenarios with different climate policies."
 
 st.write(f"<p style='text-align: left;'></br></br>{text}</p>", unsafe_allow_html=True)
+
+table = pd.DataFrame(list(text_scenario.items()), columns=['SSP', 'Scenario']).set_index('SSP')
+
+st.table(table)
 
 #----------------------------
 # Create Greenhouse gases plot (CO2)
