@@ -14,6 +14,8 @@ This project integrates a variety of datasets to analyze historical and to proje
 
 The historic climate data for downtown Montreal at the weather station McTavish/McGill is available since 1871. Our main focus for the analysis and visualitsaion will be on maximum temperature, minimum temperature and precipitation. While we will focus solely on maximum and minimum temperature in our RNN model.
 
+</br></br>
+
 **Grenhouse Gases (Carbon dioxide and Methane)**
 
  Carbon dioxide (CO2) and methane (CH4), even though there are more greenhouse gases (GHG) contributing to climate change than these two, were chosen since they have a great impact on climate change.
