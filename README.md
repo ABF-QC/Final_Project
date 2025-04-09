@@ -6,7 +6,7 @@ Explore over a century of maximum/minimum temperature and precipitation data fro
 
 ## Data
 
-This project integrates a variety of datasets to analyze historical and to project our climate trends from our Recurrent Neural Network (RNN) model in downtown Montreal.
+This project integrates a variety of datasets to analyze historical trends and to project our climate trends from our Recurrent Neural Network (RNN) model in downtown Montreal.
 
 </br></br>
 
