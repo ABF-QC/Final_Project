@@ -299,7 +299,7 @@ Here is the annual cycle that we can observe in the observation of temperature
 
 ![](images/sin_trend_obs.png)
 
-However, it is more a forecast of the average temperature minimum and maximum, since it does not capture the daily variability.
+However, it is more a forecast of the average temperature minimum and maximum that one can expect on that day since it does not capture the daily variability.
 
 </br>
 
