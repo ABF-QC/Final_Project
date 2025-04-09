@@ -1,4 +1,4 @@
-# Climate App Explorer for Downtown Montreal (McTavish/McGill)
+# Climate App Explorer for Downtown Montreal
 
 Explore over a century of maximum temperature data from downtown Montreal. This project combines data analysis, modeling, and interactive visualization to understand historical climate patterns and explore future warming scenarios.
 
