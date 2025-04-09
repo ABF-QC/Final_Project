@@ -38,11 +38,11 @@ The forecast of the GHG are based from the Shared Socioeconomic Pathways (SSPs),
 
 </br>
 
-![](data/CO2.png)
+![](images/CO2.png)
 
 </br>
 
-![](data/CH4.png)
+![](images/CH4.png)
 
 </br>
 
@@ -56,7 +56,7 @@ Population density significantly impact the land surface of a city. The surface 
 
 </br>
 
-![](data/Population.png)
+![](images/Population.png)
 
 </br>
 
