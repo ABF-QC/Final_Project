@@ -10,7 +10,7 @@ This project integrates a variety of datasets to analyze historical and projecte
 
 **Sources**:
 - Environment and Climate Change Canada
-  - [climate data](https://dd.weather.gc.ca/climate/observations/)
+  - [Historic Climate Data](https://dd.weather.gc.ca/climate/observations/)
 - Wikipedia
   - [Population census from Statistic Canada]( https://fr.wikipedia.org/wiki/Montr%C3%A9al) 
 - Institut de la statistique du Québec
