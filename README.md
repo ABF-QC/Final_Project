@@ -103,9 +103,14 @@ Here are the [results](data/ECCC/processed/daily/daily_processed.csv).
 
 </br></br>
 
-**Grenhouse Gases (Carbon dioxide and Methane)**
+**Methane Mean Global Concentration**
+
+The data were interpolated with a polynomal method to get yearly data and to removed the discontinuities between the various dataset. The results were a complete dataset including the observations and the prediction for every SSP scenario.
+
+Here are the [files](data/GreenHouse_Gases/processed/).
 
 
+An additional interpolation with a linear method was used to bring the dataset at the same time scale as the climate weather reports, which are available daily, to build our RNN model.
 
 </br></br>
 
