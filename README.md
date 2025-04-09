@@ -128,6 +128,8 @@ Here is the [resulting files](data/Population/processed/Montreal.csv).
 
 A simple 1 layer Long-Short Term Memory (LSTM) RNN model with a 31 days window was trained with the daily data from 1892 to 2020 inclusively. The goal was to build an RNN model that would forecast the daily, seasonal and annual variability of maximum/minimum temperatures and its variation caused by climate change for Downtown Montreal.
 
+To prepare the sequential data for training the RNN model, the `TimeseriesGenerator` from the Keras library was used. This utility allows efficient generation of time-windowed sequences, enabling the model to learn temporal dependencies in the data. Each sample includes a sequence of 31 days of input features. This approach ensures the RNN model is trained on properly ordered time steps, capturing trends and seasonal patterns relevant to climate modeling.
+
 </br>
 
 ```python
@@ -169,7 +171,14 @@ rnn.fit(ts_generator, epochs=50)
 | **Maximum temperature of the day**          | Predicted maximum temperature for the current day based on input features.                      |
 | **Minimum temperature of the day**          | Predicted minimum temperature for the current day based on input features.                      |
 
-</br>
+</br></br>
+
+---
+
+## Validation
+
+For the validation, the train/test/validation split method was used. The Mean Squared Error was the metric chosen for the validation.
+
 
 The model was tuned by evaluating its performance with the Mean Squared Error (MSE) on a testing dataset comprised daily data from 2021 to 2022 inclusively.
 
@@ -192,41 +201,6 @@ Once the model was well-trained, its final performance were evaluated by looking
 ![](images/validation_results.png)
 
 </br>
-
-I will be using as input for the model :
-
-Carbon dioxide (CO2)
-Methane (CH4)
-Population of Montreal's
-Previous day's maximum temperature
-Previous day's minimum temperature
-sin curve
-The reason of the choice of the inputs parameter are the following:
-
-I am hoping that the RNN model will make a link between the increase of the Greenhouse Gases (CO2 qand CH4) concentration since 1892 and the change in temperature seen in the last century caused by climate change.
-I am hoping that the RNN model will capture the impact that the increase of population has on the land surface type (vegetation vs dense buildings), its direct impact on moisture and heat absorption, creating the Urban Heat Island Effect.
-I need the previous day's temperature to allow the model to find the connection between the input features and the output features.
-The output of the model are :
-
-Maximum temperature of the day
-Minimum temperature of the day
-The model will be trained with daily data from 1892 to 2020 inclusively.
-
-
-
-The modeling approach includes:
-- **Forecasting Models**: Time-series regressors (e.g., ARIMA, Prophet, or RNN/LSTM for temporal dependencies)
-- **Scenario Integration**: SSP pathway projections used to adjust forecasts based on policy or emission assumptions
-- **Multivariate Extensions**: Incorporation of additional climate indicators (e.g., CO₂, CH₄) and population data
-
----
-
-## Validation
-
-Validation strategies:
-- **Train/Test Split**: Typically 80/20 based on time (e.g., training: 1910–2000, testing: 2001–2023)
-- **Metrics**: MSE
-- **Cross-validation**: TimeSeriesSplit where appropriate
 
 ---
 
