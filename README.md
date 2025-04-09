@@ -132,6 +132,7 @@ The model was tuned by evaluating its performance with the Mean Squared Error (M
 
 Once the model was well-trained, its final performance were evaluated by looking at the MSE with a validation dataset constituted of daily data from 2023 to 2024 inclusively.
 
+</br>
 
 ```python
 # Initialize the RNN model
