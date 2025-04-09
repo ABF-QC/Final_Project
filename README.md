@@ -280,7 +280,7 @@ The impact of climate change on the minimum temperature have a huge impact on a 
 - Extreme precipitation events, such as more than 100 mm of precipitation in a day, are things that did not existed prior 1980. 
 - Important but less severe events, such as more than 50 mm of precipitation in day, happens more frequently since the 2000's.
 
-![](images/daily_pcpn.png)
+![](images/Pcpn.png)
 
 The impact of climate change in daily precipitation amount is an important aspect of city planning. The city has to become more resilient to extreme precipitation events and adapt its infrastructure to be able to absorb important amount of rain in a short amount of time.  
 
