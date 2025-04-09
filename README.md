@@ -12,6 +12,7 @@ This project integrates a variety of datasets to analyze historical and projecte
 - Environment and Climate Change Canada
   - [climate data](https://dd.weather.gc.ca/climate/observations/)
 - Institut de la statistique du Québec (population forecasts)
+  - [Population predictions](https://statistique.quebec.ca/en/fichier/perspectives-demographiques-quebec-et-regions-2021-2071-edition-2024.pdf)
 - IPCC & CMIP6 (climate projections, SSP scenarios)
 - Global Monitoring Laboratory (NOAA) for GHG concentrations
 
