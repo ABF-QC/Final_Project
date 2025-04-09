@@ -6,9 +6,13 @@ Explore over a century of maximum/minimum temperature and precipitation data fro
 
 ## Data
 
-This project integrates a variety of datasets to analyze historical and projected climate trends in downtown Montreal.
+This project integrates a variety of datasets to analyze historical and to project our climate trends from our Recurrent Neural Network (RNN) model in downtown Montreal.
 
 </br></br>
+
+**Historic Daily Climate Data**
+
+The historic climate data for downtown Montreal at the weather station McTavish/McGill is available since 1871. Our main focus for the analysis and visualitsaion will be on maximum temperature, minimum temperature and precipitation. While we will focus solely on maximum and minimum temperature in our RNN model.
 
 **Grenhouse Gases (Carbon dioxide and Methane)**
 
