@@ -13,13 +13,13 @@ Explore over a century of maximum/minimum temperature and precipitation data fro
 
 This project integrates a variety of datasets to analyze historical trends and to project our climate trends from our Recurrent Neural Network (RNN) model in downtown Montreal.
 
-</br></br>
+</br>
 
 **Historic Daily Climate Data**
 
 The historic climate data for downtown Montreal at the weather station McTavish/McGill is available since 1871. Our main focus for the analysis and visualization will be on maximum temperature, minimum temperature and precipitation. While we will focus solely on maximum and minimum temperature in our RNN model.
 
-</br></br>
+</br>
 
 **Grenhouse Gases (Carbon dioxide and Methane)**
 
@@ -40,7 +40,7 @@ The forecast of the GHG are based from the Shared Socioeconomic Pathways (SSPs),
 
 By using the CO2 and CH4 global mean concentration as an input features of my RNN model, I am hoping that it will be able to establish the connection between the GHG curves and the temperature. Thus, in its own way see the GHG impact on climate change.
 
-</br></br>
+</br>
 
 **Montreal's Population**
 
@@ -48,7 +48,7 @@ Population density significantly impact the land surface of a city. The surface 
 
 By using the Montreal's population as an input feature of my RNN model, I am hoping that it will be able to establish the connection between the population curve and the temperature. Thus, in its own way see the Urban Heat Island Effect.
 
-</br></br>
+</br>
 
 **Sources**:
 - Environment and Climate Change Canada
@@ -67,7 +67,7 @@ By using the Montreal's population as an input feature of my RNN model, I am hop
 - SeaLevel.info
   - [CH4 Global Mean Concentration Observations (1010-1992)](https://sealevel.info/EthCH498B.txt)
 
-</br></br>
+</br>
  
 **Included Variables for the visualization**:
 - Daily maximum temperature (°C)
@@ -121,50 +121,6 @@ The data were interpolated with a polynomal method to get yearly data and to rem
 Here are the [files](data/Population/processed/Montreal.csv).
 
 </br></br>
-
-##### Table 1: Population Growth Rates – Montréal  
-**Source**: *Institut de la statistique du Québec*
-
-| Period       | 2021–2026 | 2026–2031 | 2031–2036 | 2036–2041 |
-|--------------|-----------|-----------|-----------|-----------|
-| Montréal     | 5.2%      | -2.1%     | -0.1%     | 0.0%      |
-
-</br></br>
-
-##### Table 2: Projected Population – Montréal  
-**Source**: *Institut de la statistique du Québec*
-
-| Year | Population |
-|------|------------|
-| 2026 | 2,121,100  |
-| 2031 | 2,077,000  |
-| 2036 | 2,075,600  |
-| 2041 | 2,076,700  |
-| 2046 | 2,079,700  |
-| 2051 | 2,084,400  |
-
-</br></br>
-
-##### Table 2: Scenarios of Projected Population for 2071 – Province
-**Prediction for 2071**:
-
-| Scenario          | Formula                           | Population |
-|------------------|-----------------------------------|------------|
-| Weak             | 2,084,400 × (1 - 0.04)             | 2,001,024  |
-| Moderate         | 2,084,400 × (1 + 0.065)            | 2,219,886  |
-| High             | 2,084,400 × (1 + 0.15)             | 2,397,060  |
-
-</br></br>
-
-Steps involved:
-- Handle missing or inconsistent temperature values
-- Convert date formats and extract time-based features (e.g., year, month, season)
-- Aggregate data (daily → annual/monthly means or extremes)
-- Normalize/scale inputs for model training
-- Merge historical data with projection scenarios
-- Merge population, CO₂, and CH₄ concentration data for regression modeling or scenario analysis
-
-Key tools: `pandas`, `numpy`, `scikit-learn`
 
 ---
 
