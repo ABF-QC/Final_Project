@@ -1,9 +1,10 @@
 # Climate App Explorer for Downtown Montreal
 
+</br></br>
+
 Explore over a century of maximum/minimum temperature and precipitation data from downtown Montreal (McTavis/McGill). This project combines data analysis, modeling, and interactive visualization to understand historical climate patterns and explore future warming scenarios.
 
 ---
-
 ## Data
 
 This project integrates a variety of datasets to analyze historical trends and to project our climate trends from our Recurrent Neural Network (RNN) model in downtown Montreal.
