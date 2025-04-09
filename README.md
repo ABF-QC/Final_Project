@@ -16,8 +16,15 @@ This project integrates a variety of datasets to analyze historical and projecte
 - Institut de la statistique du Québec
   - [Population predictions](https://statistique.quebec.ca/en/fichier/perspectives-demographiques-quebec-et-regions-2021-2071-edition-2024.pdf)
 - IPCC & CMIP6 (climate projections, SSP scenarios)
+  - [Greenhouse Gases Global Mean Concentration Predictions](https://greenhousegases.science.unimelb.edu.au/#!/view)
 - Global Monitoring Laboratory (NOAA) for GHG concentrations
-
+  - [CO2 Global Mean Concentration Observations (1959-2024)](https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt)
+  - [CH4 Global Mean Concentration Observations (1984-2023)](https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_annmean_gl.txt)
+- NASA - GHG concentrations monitoring
+  - [CO2 Global Mean Concentration Observations (1850-2011)](https://data.giss.nasa.gov/modelforce/ghgases/Fig1A.ext.txt)
+- SeaLevel.info
+  - [CH4 Global Mean Concentration Observations (1010-1992)](https://sealevel.info/EthCH498B.txt)
+    
 **Included Variables**:
 - `Date` – daily timestamps (from 1910 onward)
 - `MaxTemp (°C)` – daily maximum temperature
