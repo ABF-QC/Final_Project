@@ -99,7 +99,7 @@ Data needs to be avaiable on the same period and at the same timesteps without a
 
 In order to fill in gaps of missing data for the weather station of Montreal (McTavish/McGill), we also retrieved the weather station reports from weather stations over Montreal's Island. We replaced any missing daily weather reports from the closest available station on that day. Once that processed was done, we had full years of consecutive daily weather reports for Montreal (McTavish/McGill) from 1892 to 2024. 
 
-Here are the [results](data/ECCC/processed/daily/daily_processed.csv). 
+Here is the [resulting file](data/ECCC/processed/daily/daily_processed.csv). 
 
 </br>
 
@@ -107,7 +107,7 @@ Here are the [results](data/ECCC/processed/daily/daily_processed.csv).
 
 The data were interpolated with a polynomal method to get yearly data and to removed the discontinuities between the various dataset. The results were a complete dataset including the observations and the prediction yearly for every SSP scenario from 1850 to 2099.
 
-Here are the [files](data/GreenHouse_Gases/processed/).
+Here are the [resulting files](data/GreenHouse_Gases/processed/).
 
 
 An additional interpolation with a linear method was used to bring the dataset at the same time scale as the climate weather reports, which are available daily, to build our RNN model.
@@ -118,7 +118,7 @@ An additional interpolation with a linear method was used to bring the dataset a
 
 The data were interpolated with a polynomal method to get yearly data and to removed the discontinuities between the various dataset. The results were a complete dataset including the observations and the prediction yearly from 1801 to 2099.
 
-Here are the [files](data/Population/processed/Montreal.csv).
+Here is the [resulting files](data/Population/processed/Montreal.csv).
 
 </br></br>
 
@@ -126,7 +126,7 @@ Here are the [files](data/Population/processed/Montreal.csv).
 
 ## RNN Model
 
-A simple 1 layer Long-Short Term Memory (LSTM) RNN model with a 31 days window was trained with the daily data from 1892 to 2020 inclusively.
+A simple 1 layer Long-Short Term Memory (LSTM) RNN model with a 31 days window was trained with the daily data from 1892 to 2020 inclusively. The goal was to build an RNN model that would forecast the daily, seasonal and annual variability of maximum/minimum temperatures and its variation caused by climate change for Downtown Montreal.
 
 The model was tuned by evaluating its performance with the Mean Squared Error (MSE) on a testing dataset comprised daily data from 2021 to 2022 inclusively.
 
@@ -134,9 +134,6 @@ Once the model was well-trained, its final performance were evaluated by looking
 
 
 ```python
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
-
 # Initialize the RNN model
 rnn = Sequential()
 
@@ -152,10 +149,30 @@ rnn.compile(optimizer='adam', loss='mse')
 # Train the model
 rnn.fit(ts_generator, epochs=50)
 ```
+</br>
 
 ![](images/summary_RNN.png)
 
-n this notebook, we will try to build an RNN model that will forecast the daily variability (with seasonal variability) of maximum/minimum temperatures and its variation caused by climate change for the climate weather station located in Downtown Montreal.
+
+</br>
+
+| **Input Features**                          | **Explanation**                                                                                 |
+|---------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Carbon dioxide (CO2)**                    | Greenhouse gas concentration, contributing to global warming and temperature changes.   |
+| **Methane (CH4)**                           | Greenhouse gas concentration, contributing to global warming and temperature changes.            |
+| **Population of Montreal**                  | Impact of population growth on land surface creating the Urban Heat Island Effect.|
+| **Previous day's maximum temperature**      | Temperature to allow the model to link past temperature with the predicted temperature.|
+| **Previous day's minimum temperature**      | Temperature to allow the model to link past temperature with the predicted temperature.           |
+| **Half Sin curve**                          | Used to model seasonal variations, such as changes in temperature throughout the year.           |
+
+</br>
+
+| **Output Features**                         | **Explanation**                                                                                 |
+|---------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Maximum temperature of the day**          | Predicted maximum temperature for the current day based on input features.                      |
+| **Minimum temperature of the day**          | Predicted minimum temperature for the current day based on input features.                      |
+
+</br>
 
 I will be using as input for the model :
 
