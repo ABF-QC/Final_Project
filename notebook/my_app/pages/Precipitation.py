@@ -127,7 +127,7 @@ fig3.update_traces(
                    '<b>Precipitation (mm)</b>: %{y}<extra></extra>')
 
 # Update layout with title and axis ranges
-fig3.update_layout(title={'text': 'Daily Minimum Temperature Over The Years',  
+fig3.update_layout(title={'text': 'Daily Precipitation Amount Over The Years',  
                           'x': 0.5,  
                           'xanchor': 'center'},
                    title_font=dict(size=20, family='Arial'),
@@ -145,7 +145,10 @@ st.plotly_chart(fig3, use_container_width=True)
 events = ['Daily Total Precipitation higher than 100 mm ',
           'Daily Total Precipitation higher than 75 mm ',
           'Daily Total Precipitation higher than 50 mm ',
-          'Daily Total Precipitation higher than 25 mm ']
+          'Daily Total Precipitation higher than 25 mm ',
+          'Daily Total Precipitation less than 5 mm ',
+          'Daily Total Precipitation of 0 mm '
+          ]
 
 # Split section into columns
 col1, col2, col3 = st.columns(3)
@@ -174,6 +177,12 @@ elif event == events[2]:
 elif event == events[3]:
     tmp = wx_df.groupby('Year').agg(Count=(pcpn, lambda x: (x > 25.).sum()))
     tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[4]:
+    tmp = wx_df.groupby('Year').agg(Count=(pcpn, lambda x: (x < 5.).sum()))
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
+elif event == events[5]:
+    tmp = wx_df.groupby('Year').agg(Count=(pcpn, lambda x: (x < 0.1).sum()))
+    tmp = tmp.rename(columns={'Station':'Count'}).reset_index()
 else :
     pass
 
@@ -197,7 +206,7 @@ fig.update_layout(title={'text': f'Frequency of {event} over the Years',
                    title_font=dict(size=20, family='Arial'),
                    xaxis_title='Date',  
                    yaxis_title='# of events',
-                   yaxis=dict(range=[0, tmp['Count'].max()]),
+                   yaxis=dict(range=[tmp['Count'].min(), tmp['Count'].max()]),
                    xaxis=dict(range=[wx_df.index.year.min()-2, wx_df.index.year.max()+2]))
 
 # Display the interactive plot in Streamlit

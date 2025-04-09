@@ -24,16 +24,16 @@ climate_file = 'ECCC/processed/daily/daily_processed.csv'
 
 forecast_dir = os.path.join(data_dir, 'Forecast')
 
-files = {'weak' : 'Temperature_SSP4-34', 
-         'mod' : 'Temperature_SSP2-45',
-         'high' : 'Temperature_SSP4-60',
-         #'xtrm' : 'Temperature_SSP5-85',
+files = {'weak' : 'Temperature_SSP4-34entire', 
+         'mod' : 'Temperature_SSP2-45entire',
+         'high' : 'Temperature_SSP4-60entire',
+         'xtrm' : 'Temperature_SSP5-85entire',
          }
 
 scenario = {'weak':'SSP4-34', 
             'mod':'SSP2-45',
             'high':'SSP4-60',
-            #'xtrm':'SSP5-80'
+            'xtrm':'SSP5-80'
             }
 
 color_scenario = {'weak':'green', 
@@ -236,7 +236,7 @@ fig.add_trace(go.Bar(x=tmp['Year'],
                      y=tmp['Count'],
                      name='Rain Events',
                      hovertemplate='<b>Year</b>: %{x}<br>' +
-                                   '<b># of events</b>: %{y}<extra></extra>'))
+                                   '<b># of events</b>: %{y:.2f}<extra></extra>'))
 
 # Adjust/set title and axis
 fig.update_layout(title={'text': f'Frequency of {event} over the Years',  
@@ -257,23 +257,98 @@ st.plotly_chart(fig, use_container_width=True)
 # Create graph
 fig3 = go.Figure()
 
-for idx,sc in enumerate(scenario):
+for sc in reversed(list(scenario.keys())):
 
     # Add the scatter plot
     fig3.add_trace(go.Scatter(x=fcst_df.index,
                               y=fcst_df[sc], 
                               name='Forecast'+f' {scenario[sc]}',
                               mode='lines',
-                              line=dict(color=color_scenario[sc])))
+                              line=dict(color=color_scenario[sc]),
+                              opacity=0.6))
 
 # Add markers and lines
 fig3.update_traces(
      showlegend = True,
      hovertemplate='<b>Date</b>: %{x}<br>' +
-                   '<b>Max Temperature (°C)</b>: %{y}<extra></extra>')
+                   '<b>Max Temperature (°C)</b>: %{y:.2f}<extra></extra>')
 
 # Update layout with title and axis ranges
 fig3.update_layout(title={'text': 'Daily Maximum Temperature Forecast by Recurrent Neural Network ())',  
+                          'x': 0.5,  
+                          'xanchor': 'center'},
+                   title_font=dict(size=20, family='Arial'),
+                   xaxis_title='Date',  
+                   yaxis_title='Max. Temperature (°C ) ')
+
+
+# Display the interactive plot in Streamlit
+st.plotly_chart(fig3, use_container_width=True)
+
+#----------------------------
+# Create Tmin fcst plot summer
+#----------------------------
+# Create graph
+fig3 = go.Figure()
+
+fcst_df['Year'] = fcst_df.index.year
+tmp = fcst_df.groupby('Year').max()
+
+for sc in reversed(list(scenario.keys())):
+
+    # Add the scatter plot
+    fig3.add_trace(go.Scatter(x=tmp.index,
+                              y=tmp[sc], 
+                              name='Forecast'+f' ({scenario[sc]})',
+                              mode='lines',
+                              line=dict(color=color_scenario[sc]),
+                              opacity=0.6))
+
+# Add markers and lines
+fig3.update_traces(
+     showlegend = True,
+     hovertemplate='<b>Date</b>: %{x}<br>' +
+                   '<b>Max Temperature (°C)</b>: %{y:.2f}<extra></extra>')
+
+# Update layout with title and axis ranges
+fig3.update_layout(title={'text': 'Yearly highest Maximum Temperature Forecast by Recurrent Neural Network (RNN)',  
+                          'x': 0.5,  
+                          'xanchor': 'center'},
+                   title_font=dict(size=20, family='Arial'),
+                   xaxis_title='Date',  
+                   yaxis_title='Max. Temperature (°C ) ')
+
+
+# Display the interactive plot in Streamlit
+st.plotly_chart(fig3, use_container_width=True)
+
+#----------------------------
+# Create Tmin fcst plot winter
+#----------------------------
+# Create graph
+fig3 = go.Figure()
+
+fcst_df['Year'] = fcst_df.index.year
+tmp = fcst_df.groupby('Year').min()
+
+for sc in reversed(list(scenario.keys())):
+
+    # Add the scatter plot
+    fig3.add_trace(go.Scatter(x=tmp.index,
+                              y=tmp[sc], 
+                              name='Forecast'+f' ({scenario[sc]})',
+                              mode='lines',
+                              line=dict(color=color_scenario[sc]),
+                              opacity=0.6))
+
+# Add markers and lines
+fig3.update_traces(
+     showlegend = True,
+     hovertemplate='<b>Date</b>: %{x}<br>' +
+                   '<b>Max Temperature (°C)</b>: %{y:.2f}<extra></extra>')
+
+# Update layout with title and axis ranges
+fig3.update_layout(title={'text': 'Yearly lowest Maximum Temperature Forecast by Recurrent Neural Network (RNN)',  
                           'x': 0.5,  
                           'xanchor': 'center'},
                    title_font=dict(size=20, family='Arial'),
