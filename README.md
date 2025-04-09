@@ -77,7 +77,7 @@ By using the Montreal's population as an input feature of my RNN model, I am hop
 - Atmospheric methane concentrations (ppb)
 - Population for Montreal
 
-</br></br>
+</br>
 
 **Included Variables for the RNN model**:
 - Daily maximum temperature (°C)
@@ -86,10 +86,32 @@ By using the Montreal's population as an input feature of my RNN model, I am hop
 - Atmospheric methane concentrations (ppb)
 - Population for Montreal
 
+</br></br>
 
 ---
-
 ## Data Pre-processing
+
+Data needs to be avaiable on the same period and at the same timesteps without any gap in order to build our RNN model.
+
+</br>
+
+**Historic Daily Climate Data**
+
+In order to fill in gaps of missing data for the weather station of Montreal (McTavish/McGill), we also retrieved the weather station reports from weather stations over Montreal's Island. We replaced any missing daily weather reports from the closest available station on that day. Once that processed was done, we had full years of consecutive daily weather reports for Montreal (McTavish/McGill) from 1892 to 2024. 
+
+Here are the [results](data/ECCC/processed/daily/daily_processed.csv). 
+
+</br></br>
+
+**Grenhouse Gases (Carbon dioxide and Methane)**
+
+
+
+</br></br>
+
+**Montreal's Population**
+
+</br></br>
 
 Steps involved:
 - Handle missing or inconsistent temperature values
