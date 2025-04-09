@@ -1,4 +1,4 @@
-# Climate App Explorer for Downtown Montreal
+# Climate App Explorer and RNN climate forecast for Downtown Montreal
 
 </br>
 
