@@ -235,8 +235,9 @@ Once the model was well-trained, its final performance were evaluated by looking
 **Maximum Temperature**
 
 - Extreme temperature, above 35 °C, is not new. It used to happens once every 15 to 40 years. Since the 2000's, the warm cycle last la few years, producing such extreme temperature a few years in a row.
-- There are significantly more days with temperature above 30°C, since the 2000's.
-- There are more days above 0 °C. 
+- There are significantly more days yearly with temperature above 30°C, since the 2000's.
+- There are more days yearly above 0 °C.
+- There less days yearly with extreme cold temperature, such with maximum temperature below -20 °C.
 
 </br>
 
