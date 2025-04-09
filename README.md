@@ -69,15 +69,23 @@ By using the Montreal's population as an input feature of my RNN model, I am hop
 
 </br></br>
  
-**Included Variables**:
-- `Date` – daily timestamps (from 1910 onward)
-- `MaxTemp (°C)` – daily maximum temperature
-- `CO₂ (ppm)` – atmospheric carbon dioxide concentrations (monthly or yearly averages)
-- `CH₄ (ppb)` – atmospheric methane concentrations
-- `Population` – projected and historical population values for Montreal or Quebec
-- `Scenario` – Shared Socioeconomic Pathway (e.g., SSP2-4.5)
+**Included Variables for the visualization**:
+- Daily maximum temperature (°C)
+- Daily minimum temperature (°C)
+- Daily precipitation amount (mm)
+- Atmospheric carbon dioxide concentrations (ppm)
+- Atmospheric methane concentrations (ppb)
+- Population for Montreal
 
-**Format**: Combined CSV and JSON files (tabular format), organized by year or time-series.
+</br></br>
+
+**Included Variables for the RNN model**:
+- Daily maximum temperature (°C)
+- Daily minimum temperature (°C)
+- Atmospheric carbon dioxide concentrations (ppm)
+- Atmospheric methane concentrations (ppb)
+- Population for Montreal
+
 
 ---
 
