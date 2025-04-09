@@ -177,12 +177,24 @@ rnn.fit(ts_generator, epochs=50)
 
 ## Validation
 
-For the validation, the train/test/validation split method was used. The Mean Squared Error was the metric chosen for the validation.
+For the validation, the train/test/validation split method was used. The chosen metric for the validation was the Mean Squared Error (MSE).
 
+To respect the temporal order of the data, a moving window approach was used for both testing and validation. In this method, the dataset is split chronologically:
 
-The model was tuned by evaluating its performance with the Mean Squared Error (MSE) on a testing dataset comprised daily data from 2021 to 2022 inclusively.
+1. A fixed-size window of 31 days of input feature is used.
+2. The model is used to predict Tmax and Tmin.
+3. This window then slides forward by one day.
+4. The forecasted Tmax and Tmin is used to replace the last entry of the Previous day's maximum/minimum temperature.
+5. The model is used to predict Tmax and Tmin.
+6. Repeats step4 and 5 until the entire forecasty period is covered.
 
-| ** RSE Metric** | **Value**        |
+This method preserves the time dependencies within the data. It also mimics real-world forecasting conditions, where predictions are made based on past observations.
+
+</br>
+
+The model was tuned by evaluating its performance with the Mean MSE on a testing dataset comprised daily data from 2021 to 2022 inclusively.
+
+| ** MSE Metric** | **Value**        |
 |------------|------------------|
 | **Tmax** | 4.971 |
 | **Tmin** | 4.478 |
@@ -191,7 +203,7 @@ The model was tuned by evaluating its performance with the Mean Squared Error (M
 
 Once the model was well-trained, its final performance were evaluated by looking at the MSE with a validation dataset constituted of daily data from 2023 to 2024 inclusively.
 
-| ** RSE Metric** | **Value**        |
+| ** MSE Metric** | **Value**        |
 |------------|------------------|
 | **Tmax** | 4.500 |
 | **Tmin** | 4.160 |
