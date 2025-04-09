@@ -289,6 +289,24 @@ The impact of climate change in daily precipitation amount is an important aspec
 
 ## Results of RNN models
 
+![](images/fcst.png)
+
+</br>
+
+![](images/Tmax_fcst_summer.png)
+
+</br>
+
+![](images/Tmax_fcst_winter.png)
+
+</br>
+
+![](images/Tmin_fcst_summer.png)
+
+</br>
+
+![](images/Tmin_fcst_winter.png)
+
 </br></br>
 
 ## Visualization App
