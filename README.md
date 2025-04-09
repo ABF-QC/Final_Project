@@ -1,9 +1,12 @@
 # Climate App Explorer for Downtown Montreal
 
 </br>
+
 Explore over a century of maximum/minimum temperature and precipitation data from downtown Montreal (McTavis/McGill). This project combines data analysis, modeling, and interactive visualization to understand historical climate patterns and explore future warming scenarios.
 
+
 </br></br>
+
 
 ---
 ## Data
