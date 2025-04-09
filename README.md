@@ -124,7 +124,13 @@ Here are the [files](data/Population/processed/Montreal.csv).
 
 ---
 
-## Model
+## RNN Model
+
+A simple 1 layer Long-Short Term Memory (LSTM) RNN model with a 31 days window was trained with the daily data from 1892 to 2020 inclusively.
+
+The model was tuned by evaluating its performance with the Mean Squared Error (MSE) on a testing dataset comprised daily data from 2021 to 2022 inclusively.
+
+Once the model was well-trained, its final performance were evaluated by looking at the MSE with a validation dataset constituted of daily data from 2023 to 2024 inclusively.
 
 The modeling approach includes:
 - **Forecasting Models**: Time-series regressors (e.g., ARIMA, Prophet, or RNN/LSTM for temporal dependencies)
