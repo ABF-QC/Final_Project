@@ -103,9 +103,9 @@ Here are the [results](data/ECCC/processed/daily/daily_processed.csv).
 
 </br></br>
 
-**Methane Mean Global Concentration**
+**Grenhouse Gases (Carbon dioxide and Methane)**
 
-The data were interpolated with a polynomal method to get yearly data and to removed the discontinuities between the various dataset. The results were a complete dataset including the observations and the prediction for every SSP scenario.
+The data were interpolated with a polynomal method to get yearly data and to removed the discontinuities between the various dataset. The results were a complete dataset including the observations and the prediction yearly for every SSP scenario from 1850 to 2099.
 
 Here are the [files](data/GreenHouse_Gases/processed/).
 
@@ -115,6 +115,44 @@ An additional interpolation with a linear method was used to bring the dataset a
 </br></br>
 
 **Montreal's Population**
+
+The data were interpolated with a polynomal method to get yearly data and to removed the discontinuities between the various dataset. The results were a complete dataset including the observations and the prediction yearly from 1801 to 2099.
+
+Here are the [files](data/Population/processed/Montreal.csv).
+
+</br></br>
+
+##### Table 1: Population Growth Rates – Montréal  
+**Source**: *Institut de la statistique du Québec*
+
+| Period       | 2021–2026 | 2026–2031 | 2031–2036 | 2036–2041 |
+|--------------|-----------|-----------|-----------|-----------|
+| Montréal     | 5.2%      | -2.1%     | -0.1%     | 0.0%      |
+
+</br></br>
+
+##### Table 2: Projected Population – Montréal  
+**Source**: *Institut de la statistique du Québec*
+
+| Year | Population |
+|------|------------|
+| 2026 | 2,121,100  |
+| 2031 | 2,077,000  |
+| 2036 | 2,075,600  |
+| 2041 | 2,076,700  |
+| 2046 | 2,079,700  |
+| 2051 | 2,084,400  |
+
+</br></br>
+
+##### Table 2: Scenarios of Projected Population for 2071 – Province
+**Prediction for 2071**:
+
+| Scenario          | Formula                           | Population |
+|------------------|-----------------------------------|------------|
+| Weak             | 2,084,400 × (1 - 0.04)             | 2,001,024  |
+| Moderate         | 2,084,400 × (1 + 0.065)            | 2,219,886  |
+| High             | 2,084,400 × (1 + 0.15)             | 2,397,060  |
 
 </br></br>
 
