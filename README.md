@@ -9,7 +9,8 @@ Explore over a century of maximum/minimum temperature and precipitation data fro
 This project integrates a variety of datasets to analyze historical and projected climate trends in downtown Montreal.
 
 **Sources**:
-- Environment and Climate Change Canada (historical temperature data)
+- Environment and Climate Change Canada
+  - [climate data](https://dd.weather.gc.ca/climate/observations/)
 - Institut de la statistique du Québec (population forecasts)
 - IPCC & CMIP6 (climate projections, SSP scenarios)
 - Global Monitoring Laboratory (NOAA) for GHG concentrations
