@@ -132,6 +132,52 @@ The model was tuned by evaluating its performance with the Mean Squared Error (M
 
 Once the model was well-trained, its final performance were evaluated by looking at the MSE with a validation dataset constituted of daily data from 2023 to 2024 inclusively.
 
+
+```python
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
+
+# Initialize the RNN model
+rnn = Sequential()
+
+# Add LSTM layer
+rnn.add(LSTM(1024, activation='relu', return_sequences=False, input_shape=(window_size, X_scaled_train.shape[1])))
+
+# Add Dense layer
+rnn.add(Dense(Y_scaled_train.shape[1]))
+
+# Compile the model
+rnn.compile(optimizer='adam', loss='mse')
+
+# Train the model
+rnn.fit(ts_generator, epochs=50)
+```
+
+![](images/summary_RNN.png)
+
+n this notebook, we will try to build an RNN model that will forecast the daily variability (with seasonal variability) of maximum/minimum temperatures and its variation caused by climate change for the climate weather station located in Downtown Montreal.
+
+I will be using as input for the model :
+
+Carbon dioxide (CO2)
+Methane (CH4)
+Population of Montreal's
+Previous day's maximum temperature
+Previous day's minimum temperature
+sin curve
+The reason of the choice of the inputs parameter are the following:
+
+I am hoping that the RNN model will make a link between the increase of the Greenhouse Gases (CO2 qand CH4) concentration since 1892 and the change in temperature seen in the last century caused by climate change.
+I am hoping that the RNN model will capture the impact that the increase of population has on the land surface type (vegetation vs dense buildings), its direct impact on moisture and heat absorption, creating the Urban Heat Island Effect.
+I need the previous day's temperature to allow the model to find the connection between the input features and the output features.
+The output of the model are :
+
+Maximum temperature of the day
+Minimum temperature of the day
+The model will be trained with daily data from 1892 to 2020 inclusively.
+
+
+
 The modeling approach includes:
 - **Forecasting Models**: Time-series regressors (e.g., ARIMA, Prophet, or RNN/LSTM for temporal dependencies)
 - **Scenario Integration**: SSP pathway projections used to adjust forecasts based on policy or emission assumptions
