@@ -289,9 +289,21 @@ The impact of climate change in daily precipitation amount is an important aspec
 
 ## Results of RNN models
 
+We can see that the model see clearly the annual cycle of temperatures.
+
 ![](images/fcst.png)
 
 </br>
+
+Here is the annual cycle that we can observe in the observation of temperature
+
+![](images/sin_trend_obs.png)
+
+However, it is more a forecast of the average temperature minimum and maximum, since it does not capture the daily variability.
+
+</br>
+
+Here are somes graph that focus on the top (summer) and bottom (winter) portion of the annual cycle to see the trend in summer/winter tempeature to expect with climate change based on our RNN model.
 
 ![](images/Tmax_fcst_summer.png)
 
