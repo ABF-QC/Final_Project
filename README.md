@@ -128,10 +128,6 @@ Here is the [resulting files](data/Population/processed/Montreal.csv).
 
 A simple 1 layer Long-Short Term Memory (LSTM) RNN model with a 31 days window was trained with the daily data from 1892 to 2020 inclusively. The goal was to build an RNN model that would forecast the daily, seasonal and annual variability of maximum/minimum temperatures and its variation caused by climate change for Downtown Montreal.
 
-The model was tuned by evaluating its performance with the Mean Squared Error (MSE) on a testing dataset comprised daily data from 2021 to 2022 inclusively.
-
-Once the model was well-trained, its final performance were evaluated by looking at the MSE with a validation dataset constituted of daily data from 2023 to 2024 inclusively.
-
 </br>
 
 ```python
@@ -172,6 +168,25 @@ rnn.fit(ts_generator, epochs=50)
 |---------------------------------------------|-------------------------------------------------------------------------------------------------|
 | **Maximum temperature of the day**          | Predicted maximum temperature for the current day based on input features.                      |
 | **Minimum temperature of the day**          | Predicted minimum temperature for the current day based on input features.                      |
+
+</br>
+
+The model was tuned by evaluating its performance with the Mean Squared Error (MSE) on a testing dataset comprised daily data from 2021 to 2022 inclusively.
+
+| ** RSE Metric** | **Value**        |
+|------------|------------------|
+| **Tmax** | 4.971 |
+| **Tmin** | 4.478 |
+
+</br>
+
+Once the model was well-trained, its final performance were evaluated by looking at the MSE with a validation dataset constituted of daily data from 2023 to 2024 inclusively.
+
+| ** RSE Metric** | **Value**        |
+|------------|------------------|
+| **Tmax** | 4.500 |
+| **Tmin** | 4.160 |
+
 
 </br>
 
