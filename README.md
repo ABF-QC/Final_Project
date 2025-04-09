@@ -4,7 +4,7 @@ Explore over a century of maximum/minimum temperature and precipitation data fro
 
 ---
 
-## 📊 Data
+## Data
 
 This project integrates a variety of datasets to analyze historical and projected climate trends in downtown Montreal.
 
@@ -26,7 +26,7 @@ This project integrates a variety of datasets to analyze historical and projecte
 
 ---
 
-## 🔍 Data Pre-processing
+## Data Pre-processing
 
 Steps involved:
 - Handle missing or inconsistent temperature values
@@ -40,7 +40,7 @@ Key tools: `pandas`, `numpy`, `scikit-learn`
 
 ---
 
-## 🧠 Model
+## Model
 
 The modeling approach includes:
 - **Forecasting Models**: Time-series regressors (e.g., ARIMA, Prophet, or RNN/LSTM for temporal dependencies)
@@ -49,24 +49,20 @@ The modeling approach includes:
 
 ---
 
-## ✅ Validation
+## Validation
 
 Validation strategies:
 - **Train/Test Split**: Typically 80/20 based on time (e.g., training: 1910–2000, testing: 2001–2023)
-- **Metrics**: MAE, RMSE, R²
+- **Metrics**: MSE
 - **Cross-validation**: TimeSeriesSplit where appropriate
 
 ---
 
-## 📈 Results & Visualization / 🚀 App Deployment
+## Results & Visualization / 🚀 App Deployment
 
-### 📈 Visualization
+### Visualization
 - Interactive line plots and scatter plots (Streamlit + Plotly)
 - Forecast overlays with SSP scenarios (e.g., SSP2-4.5, SSP5-8.5)
 - Scenario explanation tables embedded in the UI
 
-### 🚀 Streamlit App
-To run the app locally:
 
-```bash
-streamlit run app.py
