@@ -101,7 +101,7 @@ In order to fill in gaps of missing data for the weather station of Montreal (Mc
 
 Here are the [results](data/ECCC/processed/daily/daily_processed.csv). 
 
-</br></br>
+</br>
 
 **Grenhouse Gases (Carbon dioxide and Methane)**
 
@@ -112,7 +112,7 @@ Here are the [files](data/GreenHouse_Gases/processed/).
 
 An additional interpolation with a linear method was used to bring the dataset at the same time scale as the climate weather reports, which are available daily, to build our RNN model.
 
-</br></br>
+</br>
 
 **Montreal's Population**
 
