@@ -8,12 +8,25 @@ Explore over a century of maximum/minimum temperature and precipitation data fro
 
 This project integrates a variety of datasets to analyze historical and projected climate trends in downtown Montreal.
 
+**Grenhouse Gases (Carbon dioxide and Methane)**
+ Carbon dioxide (CO2) and methane (CH4), even though there are more greenhouse gases (GHG) contributing to climate change than these two, were chosen since they have a great impact on climate change.
+
+The forecast of the GHG are based from the Shared Socioeconomic Pathways (SSPs), which are climate change scenarios of projected socioeconomic global changes up to 2100 as defined in the IPCC Sixth Assessment Report on climate change in 2021. They are used to derive GHG emissions scenarios with different climate policies.
+
+| Scenario  | Description                                                       |
+|-----------|-------------------------------------------------------------------|
+| **SSP4-34** | Intermediate GHG emissions with a desire to implement climate policies |
+| **SSP2-45** | Low to intermediate GHG emissions with large social disparities  |
+| **SSP4-60** | Intermediate to high GHG emissions with deep social inequalities |
+| **SSP5-80** | Very high GHG emissions (worst case scenario)                    |
+
+By using the CO2 and CH4 global mean concentration as an input features of my RNN model, I am hoping that it will be able to establish the connection between the GHG curves and the temperature. Thus, in its own way see the GHG impact on climate change.
+
 **Montreal's Population**
 Population density significantly impact the land surface of a city. The surface type consequently influence the surface albedo, its capacity to retain moisture, and so much more. When the population is dense enough and has changed the surface type from mainly vegetation to a dense building surface area, the urban heat island effect is created over the urban area. The Urban Heat Island Effect means that the urban area accumulate more heat than its surroundings rural areas and, consequently, the maximum temperature and minimum temperature will generally be warmer in the urban area than in the surroundings rural areas.
 
 By using the Montreal's population as an input feature of my RNN model, I am hoping that it will be able to establish the connection between the population curve and the temperature. Thus, in its own way see the Urban Heat Island Effect.
 
-Here we can have a look at the past and predicted data for Montreal's population.
 
 **Sources**:
 - Environment and Climate Change Canada
