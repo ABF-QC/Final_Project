@@ -237,7 +237,7 @@ Once the model was well-trained, its final performance were evaluated by looking
 - Extreme temperature, above 35 °C, is not new. It used to happens once every 15 to 40 years. Since the 2000's, the warm cycle last la few years, producing such extreme temperature a few years in a row.
 - There are significantly more days yearly with temperature above 30°C, since the 2000's.
 - There are more days yearly above 0 °C.
-- There less days yearly with extreme cold temperature, such with maximum temperature below -20 °C.
+- Since the 1980's, there less and less days yearly with extreme cold temperature, such with maximum temperature below -20 °C.
 
 </br>
 
@@ -254,14 +254,24 @@ The impact of climate change on the maximum temperature have a huge impact on a 
 
 </br>
 
-**Maximum Temperature**
+**Minimum Temperature**
 
-- Extreme precipitation events, such as more than 100 mm of precipitation in a day, are things that did not existed prior 1980. 
-- Important but less severe events, such as more than 50 mm of precipitation in day, happens more frequently since the 2000's.
+- Extremely warm minimum temperature event, where the minimum temperature of the day is above 25 °C, is new since the mid-1970's. A worrisome trend is that is is become more frequent since 2010.
+- There is a steady increase of number of days yearly with the minimum temperature above 20°C.
+- There are more days yearly above where the minimum temperature is above 0 °C.
+- Since the 2000's, there was no extreme cold event where minimum temperature went below -30 °C. It used to be not frequent, but normal before the 2000's.
 
-![](images/daily_pcpn.png)
+</br>
 
-The impact of climate change on daily precipitation amount is an important aspect of city planning. The city has to become more resilient to extreme precipitation events and adapt its infrastructure to be able to absorb important amount of rain in a short amount of time.  
+![](images/Tmin_20.png)
+
+</br>
+
+![](images/Tmin_below-30.png)
+
+</br>
+
+The impact of climate change on the minimum temperature have a huge impact on a person health and safety, its communities and the industries sensible to weather. During a heat wave, night time temperature above 20 °C greatly limits the opportunities to cool down and recover from the day's heat. Which means that the heat stress on the body remains high even at nighttime leading to a greater health risk when expose to such stress over consecutive days. For industries relying on fluctation of daily temperature from above zero to below zero, such as the sugar shack industries, less days with temperatures below zero means less rentability.
 
 </br>
 
