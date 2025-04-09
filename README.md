@@ -55,7 +55,9 @@ By using the Montreal's population as an input feature of my RNN model, I am hop
   - [CO2 Global Mean Concentration Observations (1850-2011)](https://data.giss.nasa.gov/modelforce/ghgases/Fig1A.ext.txt)
 - SeaLevel.info
   - [CH4 Global Mean Concentration Observations (1010-1992)](https://sealevel.info/EthCH498B.txt)
-    
+
+</br></br>
+ 
 **Included Variables**:
 - `Date` – daily timestamps (from 1910 onward)
 - `MaxTemp (°C)` – daily maximum temperature
