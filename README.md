@@ -186,7 +186,7 @@ To respect the temporal order of the data, a moving window approach was used for
 3. This window then slides forward by one day.
 4. The forecasted Tmax and Tmin is used to replace the last entry of the Previous day's maximum/minimum temperature.
 5. The model is used to predict Tmax and Tmin.
-6. Repeats step4 and 5 until the entire forecasty period is covered.
+6. Repeat steps 4 and 5 until the entire forecasty period is covered.
 
 This method preserves the time dependencies within the data. It also mimics real-world forecasting conditions, where predictions are made based on past observations.
 
