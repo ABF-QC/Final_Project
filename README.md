@@ -21,6 +21,7 @@ This project integrates a variety of datasets to analyze historical trends and t
 The historic climate data for downtown Montreal at the weather station McTavish/McGill is available since 1871. Our main focus for the analysis and visualization will be on maximum temperature, minimum temperature and precipitation. While we will focus solely on maximum and minimum temperature in our RNN model.
 
 See the notebook [DataQuery](notebook/DataQuery.ipynb) to have more details about how the climate data were queried.
+
 See the notebook [AdminRegion2stns](notebook/AdminRegion2stns.ipynb) to see how we retrieve a list of weather station within an administrative region.
 
 </br>
@@ -342,6 +343,7 @@ We see some unexpected drops in temperature with global warming scenario that sh
 </br>
 
 See the notebook [RNN_deployment](notebook/RNN_deployment.ipynb) to have more details about how the model was retrain over the entire dataset before deployment and using it to make predictions.
+
 See the notebook [Prediction](notebook/Prediction.ipynb) to have more details about how the prediction are done with our developed RNN model.
 
 </br></br>
