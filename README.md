@@ -305,7 +305,7 @@ However, it is more a forecast of the average temperature minimum and maximum th
 
 Here are somes graph that focus on the top (summer) and bottom (winter) portion of the annual cycle to see the trend in summer/winter temperature to expect with climate change based on our RNN model. 
 
-We see some unexpected drops in temperature with global warming scenario that should results in an increased trend. For example, there is a sharp drop at 2040 in the SSP2-45 scenario. It seems to be related to the drop in methane emissions. For the significant drop in the SSP5-80, it seems to be related to a weak inflection point in the population at 2036. This leads me to believe that there is some instability in my model that are trigger, propagated and amplified with time when there is an inflection point in the input features.
+We see some unexpected drops in temperature with global warming scenario that should results in an increased trend. For example, there is a sharp drop at 2040 in the SSP2-45 scenario. It seems to be related to the drop in methane emissions. For the significant drop in the SSP5-80, it seems to be related to a weak inflection point in the population at 2036. This leads me to believe that there is some instabilities in my model that are trigger, propagated and amplified with time when there is an inflection point in the input features.
 
 ![](images/Tmax_fcst_summer.png)
 
