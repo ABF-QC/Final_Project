@@ -152,7 +152,9 @@ See the notebook [PopulationPreprocessing](notebook/PopulationPreprocessing.ipyn
 
 ## RNN Model
 
-A simple 1 layer Long-Short Term Memory (LSTM) RNN model with a 31 days window was trained with the daily data from 1892 to 2020 inclusively. The goal was to build an RNN model that would forecast the daily, seasonal and annual variability of maximum/minimum temperatures and its variation caused by climate change for Downtown Montreal.
+A simple 1 layer Long-Short Term Memory (LSTM) RNN model with a 31 days window was trained with the daily data from 1892 to 2020 inclusively. 
+
+The goal was to build an RNN model that would forecast the daily, seasonal and annual variability of maximum/minimum temperatures and its variation caused by climate change for Downtown Montreal.
 
 To prepare the sequential data for training the RNN model, the `TimeseriesGenerator` from the Keras library was used. This utility allows efficient generation of time-windowed sequences, enabling the model to learn temporal dependencies in the data. Each sample includes a sequence of 31 days of input features. This approach ensures the RNN model is trained on properly ordered time steps, capturing trends and seasonal patterns relevant to climate modeling.
 
@@ -345,7 +347,7 @@ We see some unexpected drops in temperature with global warming scenario that sh
 
 </br>
 
-See the notebook [RNN_deployment](notebook/RNN_deployment.ipynb) to have more details about how the model was retrain over the entire dataset before deployment and using it to make predictions.
+See the notebook [RNN_deployment](notebook/RNN_deployment.ipynb) to have more details about how the model was retrained over the entire dataset before deployment and using it to make predictions.
 
 See the notebook [Prediction](notebook/Prediction.ipynb) to have more details about how the prediction are done with our developed RNN model.
 
