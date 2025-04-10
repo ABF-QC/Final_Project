@@ -363,5 +363,22 @@ Clik [here]() to have access to our Climate App.
 
 ## Conclusion
 
+I hope that you will enjoy our app for the historic climate visualization aspect!
+
+</br>
+
+As our climate forecast, it needs improvement and we will be working on that in the near future.
+
+</br>
+
+We are hoping to adress those issues shortly:
+  - Improving the sin curve passed to the model for training
+  - Train the model to see the daily variabilities (with a daily sin curve maybe)
+  - Find ways to reduce the instability of the model to reduce instability propagation and amplification over time.
+
+</br>
+
+Please take into consideration that this first phase of this project was done in less than 2 weeks with a simple laptop. Therefore, we had time and ressource limitation.
+
 
 
