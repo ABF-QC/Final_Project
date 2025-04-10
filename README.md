@@ -250,7 +250,7 @@ Once the model was well-trained, its final performance were evaluated by looking
 
 See the notebook [Analysis](notebook/Analysis.ipynb) to have more details about how the data were analyzed to make a selection of data to build our Climate App.
 
-#### The following Analysis was made using our Climate App
+### The following Analysis was made using our Climate App
 
 </br>
 
