@@ -324,9 +324,14 @@ We see some unexpected drops in temperature with global warming scenario that sh
 </br></br>
 
 ## Visualization App
-- Interactive line plots and scatter plots (Streamlit + Plotly)
-- Forecast overlays with SSP scenarios (e.g., SSP2-4.5, SSP5-8.5)
-- Scenario explanation tables embedded in the UI
+
+Our Climate Application was developped visualize the weather's evolution over the last century for Montreal (McTavish/McGill).
+
+It allows easy nagivation through historic data for the maximum temperature, minimum temperature and precipitation. In addition, our climate app simplify the visualization the frequency of severe events trough time. For example, the yearly occurence of temperature higher than 30 °C or the yearly occurency of daily precpitation amount greater than 75 mm.
+
+It also includes a climate forecast visualizer for different global warming scenarios. One can navigate through the daily maximum and minimum temperatures prediction for four different global warming scenarios. The prediction were produced from our RNN model explained above.
+
+Clik [here]() to have access to our Climate App.
 
 </br></br>
 
