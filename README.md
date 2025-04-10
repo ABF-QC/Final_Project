@@ -20,7 +20,8 @@ This project integrates a variety of datasets to analyze historical trends and t
 
 The historic climate data for downtown Montreal at the weather station McTavish/McGill is available since 1871. Our main focus for the analysis and visualization will be on maximum temperature, minimum temperature and precipitation. While we will focus solely on maximum and minimum temperature in our RNN model.
 
-See this notebook [DataQuery](notebook/DataQuery.ipynb) to have more details about how the climate data were queried and this notebook [AdminRegion2stns](notebook/AdminRegion2stns.ipynb) to see how we retrieve a list of weather station within an administrative region.
+See the notebook [DataQuery](notebook/DataQuery.ipynb) to have more details about how the climate data were queried.
+See the notebook [AdminRegion2stns](notebook/AdminRegion2stns.ipynb) to see how we retrieve a list of weather station within an administrative region.
 
 </br>
 
@@ -118,7 +119,7 @@ In order to fill in gaps of missing data for the weather station of Montreal (Mc
 
 Here is the [resulting file](data/ECCC/processed/daily/daily_processed.csv). 
 
-See this notebook [ClimateDataPreprocessing](notebook/ClimateDataPreprocessing.ipynb) to have more details about how the climate data were pre-processed.
+See the notebook [ClimateDataPreprocessing](notebook/ClimateDataPreprocessing.ipynb) to have more details about how the climate data were pre-processed.
 
 </br>
 
@@ -141,7 +142,7 @@ The data were interpolated with a polynomal method to get yearly data and to rem
 
 Here is the [resulting files](data/Population/processed/Montreal.csv).
 
-See this notebook [PopulationPreprocessing](notebook/PopulationPreprocessing.ipynb) to have more details about how the population data were pre-processed.
+See the notebook [PopulationPreprocessing](notebook/PopulationPreprocessing.ipynb) to have more details about how the population data were pre-processed.
 
 </br></br>
 
@@ -153,7 +154,7 @@ A simple 1 layer Long-Short Term Memory (LSTM) RNN model with a 31 days window w
 
 To prepare the sequential data for training the RNN model, the `TimeseriesGenerator` from the Keras library was used. This utility allows efficient generation of time-windowed sequences, enabling the model to learn temporal dependencies in the data. Each sample includes a sequence of 31 days of input features. This approach ensures the RNN model is trained on properly ordered time steps, capturing trends and seasonal patterns relevant to climate modeling.
 
-See this notebook [RNN](notebook/RNN.ipynb) to have more details about how the RNN model training processed.
+See the notebook [RNN](notebook/RNN.ipynb) to have more details about how the RNN model training processed.
 
 </br>
 
@@ -215,7 +216,7 @@ To respect the temporal order of the data, a moving window approach was used for
 
 This method preserves the time dependencies within the data. It also mimics real-world forecasting conditions, where predictions are made based on past observations.
 
-See this notebook [Validation](notebook/Validation.ipynb) to have more details about how the RNN model training processed.
+See the notebook [Validation](notebook/Validation.ipynb) to have more details about how the RNN model training processed.
 
 </br>
 
@@ -245,7 +246,7 @@ Once the model was well-trained, its final performance were evaluated by looking
 
 ## Analysis - Climate change impact for downtown Montreal  
 
-See this notebook [Analysis](notebook/Analysis.ipynb) to have more details about how the analysis done on the data.
+See the notebook [Analysis](notebook/Analysis.ipynb) to have more details about how the analysis done on the data.
 
 </br>
 
@@ -340,8 +341,8 @@ We see some unexpected drops in temperature with global warming scenario that sh
 
 </br>
 
-See this notebook [RNN_deployment](notebook/RNN_deployment.ipynb) to have more details about how the model was retrain over the entire dataset before deployment and using it to make predictions.
-See this notebook [Prediction](notebook/Prediction.ipynb) to have more details about how the prediction are done with our developed RNN model.
+See the notebook [RNN_deployment](notebook/RNN_deployment.ipynb) to have more details about how the model was retrain over the entire dataset before deployment and using it to make predictions.
+See the notebook [Prediction](notebook/Prediction.ipynb) to have more details about how the prediction are done with our developed RNN model.
 
 </br></br>
 
