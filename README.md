@@ -20,6 +20,8 @@ This project integrates a variety of datasets to analyze historical trends and t
 
 The historic climate data for downtown Montreal at the weather station McTavish/McGill is available since 1871. Our main focus for the analysis and visualization will be on maximum temperature, minimum temperature and precipitation. While we will focus solely on maximum and minimum temperature in our RNN model.
 
+See this notebook [DataQuery](notebook/DataQuery.ipynb) to have more details about how the climate data were queried and this notebook [AdminRegion2stns](notebook/AdminRegion2stns.ipynb) to see how we retrieve a list of weather station within an administrative region.
+
 </br>
 
 **Grenhouse Gases (Carbon dioxide and Methane)**
@@ -116,13 +118,17 @@ In order to fill in gaps of missing data for the weather station of Montreal (Mc
 
 Here is the [resulting file](data/ECCC/processed/daily/daily_processed.csv). 
 
+See this notebook [ClimateDataPreprocessing](notebook/ClimateDataPreprocessing.ipynb) to have more details about how the climate data were pre-processed.
+
 </br>
 
-**Grenhouse Gases (Carbon dioxide and Methane)**
+**Grenhouse Gases (GHG) (Carbon dioxide and Methane)**
 
 The data were interpolated with a polynomal method to get yearly data and to removed the discontinuities between the various dataset. The results were a complete dataset including the observations and the prediction yearly for every SSP scenario from 1850 to 2099.
 
 Here are the [resulting files](data/GreenHouse_Gases/processed/).
+
+See these notebooks [CO2_preprocessing](notebook/CO2_preprocessing.ipynb) and [CH4_preprocessing](notebook/CH4_preprocessing.ipynb) to have more details about how the GHG data were pre-processed.
 
 
 An additional interpolation with a linear method was used to bring the dataset at the same time scale as the climate weather reports, which are available daily, to build our RNN model.
@@ -135,6 +141,8 @@ The data were interpolated with a polynomal method to get yearly data and to rem
 
 Here is the [resulting files](data/Population/processed/Montreal.csv).
 
+See this notebook [PopulationPreprocessing](notebook/PopulationPreprocessing.ipynb) to have more details about how the population data were pre-processed.
+
 </br></br>
 
 ---
@@ -144,6 +152,8 @@ Here is the [resulting files](data/Population/processed/Montreal.csv).
 A simple 1 layer Long-Short Term Memory (LSTM) RNN model with a 31 days window was trained with the daily data from 1892 to 2020 inclusively. The goal was to build an RNN model that would forecast the daily, seasonal and annual variability of maximum/minimum temperatures and its variation caused by climate change for Downtown Montreal.
 
 To prepare the sequential data for training the RNN model, the `TimeseriesGenerator` from the Keras library was used. This utility allows efficient generation of time-windowed sequences, enabling the model to learn temporal dependencies in the data. Each sample includes a sequence of 31 days of input features. This approach ensures the RNN model is trained on properly ordered time steps, capturing trends and seasonal patterns relevant to climate modeling.
+
+See this notebook [RNN](notebook/RNN.ipynb) to have more details about how the RNN model training processed.
 
 </br>
 
@@ -205,6 +215,8 @@ To respect the temporal order of the data, a moving window approach was used for
 
 This method preserves the time dependencies within the data. It also mimics real-world forecasting conditions, where predictions are made based on past observations.
 
+See this notebook [Validation](notebook/Validation.ipynb) to have more details about how the RNN model training processed.
+
 </br>
 
 The model was tuned by evaluating its performance with the Mean MSE on a testing dataset comprised daily data from 2021 to 2022 inclusively.
@@ -232,6 +244,10 @@ Once the model was well-trained, its final performance were evaluated by looking
 ---
 
 ## Analysis - Climate change impact for downtown Montreal  
+
+See this notebook [Analysis](notebook/Analysis.ipynb) to have more details about how the analysis done on the data.
+
+</br>
 
 **Maximum Temperature**
 
@@ -321,6 +337,11 @@ We see some unexpected drops in temperature with global warming scenario that sh
 </br>
 
 ![](images/Tmin_fcst_winter.png)
+
+</br>
+
+See this notebook [RNN_deployment](notebook/RNN_deployment.ipynb) to have more details about how the model was retrain over the entire dataset before deployment and using it to make predictions.
+See this notebook [Prediction](notebook/Prediction.ipynb) to have more details about how the prediction are done with our developed RNN model.
 
 </br></br>
 
