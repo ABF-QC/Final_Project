@@ -18,7 +18,7 @@ st.set_page_config(layout="wide")
 #----------------------------
 # Define paths and filenames
 #----------------------------
-data_dir = '../../data/'
+data_dir = 'data/'
 
 climate_file = 'ECCC/processed/daily/daily_processed.csv'
 
