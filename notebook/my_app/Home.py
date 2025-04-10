@@ -5,7 +5,7 @@ import pandas as pd
 #import seaborn as sns
 #import matplotlib.pyplot as plt
 #import plotly.express as px
-import plotly.graph_objs as go
+#import plotly.graph_objs as go
 
 #----------------------------
 # Adjust page config
