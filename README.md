@@ -4,6 +4,12 @@
 
 Explore over a century of maximum/minimum temperature and precipitation data from downtown Montreal (McTavis/McGill). This project combines data analysis, modeling, and interactive visualization to understand historical climate patterns and explore future warming scenarios.
 
+</br>
+
+Click [here](https://abf-qc-final-project-notebookmy-apphome-cryidk.streamlit.app/Maximum_Temperature) to have access to our Climate App.
+
+</br>
+
 [Here](Final_Presentation.pptx) is an presentation summarizing the project. Feel free to go through the rest of this page for more details.
 
 </br></br>
@@ -361,7 +367,7 @@ It allows easy nagivation through historic data for the maximum temperature, min
 
 It also includes a climate forecast visualizer for different global warming scenarios. One can navigate through the daily maximum and minimum temperatures prediction for four different global warming scenarios. The prediction were produced from our RNN model explained above.
 
-Clik [here]() to have access to our Climate App.
+Click [here](https://abf-qc-final-project-notebookmy-apphome-cryidk.streamlit.app/Maximum_Temperature) to have access to our Climate App.
 
 </br></br>
 
