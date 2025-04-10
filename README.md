@@ -132,6 +132,7 @@ Here are the [resulting files](data/GreenHouse_Gases/processed/).
 
 See these notebooks [CO2_preprocessing](notebook/CO2_preprocessing.ipynb) and [CH4_preprocessing](notebook/CH4_preprocessing.ipynb) to have more details about how the GHG data were pre-processed.
 
+</br>
 
 An additional interpolation with a linear method was used to bring the dataset at the same time scale as the climate weather reports, which are available daily, to build our RNN model.
 
