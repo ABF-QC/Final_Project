@@ -347,7 +347,7 @@ We see some unexpected drops in temperature with global warming scenario that sh
 
 </br>
 
-See the notebook [RNN_deployment](notebook/RNN_deployment.ipynb) to have more details about how the model was retrain over the entire dataset before deployment and using it to make predictions.
+See the notebook [RNN_deployment](notebook/RNN_deployment.ipynb) to have more details about how the model was retrained over the entire dataset before deployment and using it to make predictions.
 
 See the notebook [Prediction](notebook/Prediction.ipynb) to have more details about how the prediction are done with our developed RNN model.
 
