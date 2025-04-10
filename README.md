@@ -4,6 +4,7 @@
 
 Explore over a century of maximum/minimum temperature and precipitation data from downtown Montreal (McTavis/McGill). This project combines data analysis, modeling, and interactive visualization to understand historical climate patterns and explore future warming scenarios.
 
+[Here](Final_Presentation.pptx) is an presentation summarizing the project. Feel free to go through the rest of this page for more details.
 
 </br></br>
 
