@@ -1,0 +1,412 @@
+               Global Mean CO2 Mixing Ratios (ppm): Observations
+----------------------------------------------------------------------------------
+Data                                  
+Source  Year  MixR   
+----------------------------------------------------------------------------------
+Ice-Core Data Adjusted for Global Mean	1850	285.2
+Ice-Core Data Adjusted for Global Mean	1851	285.1
+Ice-Core Data Adjusted for Global Mean	1852	285
+Ice-Core Data Adjusted for Global Mean	1853	285
+Ice-Core Data Adjusted for Global Mean	1854	284.9
+Ice-Core Data Adjusted for Global Mean	1855	285.1
+Ice-Core Data Adjusted for Global Mean	1856	285.4
+Ice-Core Data Adjusted for Global Mean	1857	285.6
+Ice-Core Data Adjusted for Global Mean	1858	285.9
+Ice-Core Data Adjusted for Global Mean	1859	286.1
+Ice-Core Data Adjusted for Global Mean	1860	286.4
+Ice-Core Data Adjusted for Global Mean	1861	286.6
+Ice-Core Data Adjusted for Global Mean	1862	286.7
+Ice-Core Data Adjusted for Global Mean	1863	286.8
+Ice-Core Data Adjusted for Global Mean	1864	286.9
+Ice-Core Data Adjusted for Global Mean	1865	287.1
+Ice-Core Data Adjusted for Global Mean	1866	287.2
+Ice-Core Data Adjusted for Global Mean	1867	287.3
+Ice-Core Data Adjusted for Global Mean	1868	287.4
+Ice-Core Data Adjusted for Global Mean	1869	287.5
+Ice-Core Data Adjusted for Global Mean	1870	287.7
+Ice-Core Data Adjusted for Global Mean	1871	287.9
+Ice-Core Data Adjusted for Global Mean	1872	288
+Ice-Core Data Adjusted for Global Mean	1873	288.2
+Ice-Core Data Adjusted for Global Mean	1874	288.4
+Ice-Core Data Adjusted for Global Mean	1875	288.6
+Ice-Core Data Adjusted for Global Mean	1876	288.7
+Ice-Core Data Adjusted for Global Mean	1877	288.9
+Ice-Core Data Adjusted for Global Mean	1878	289.5
+Ice-Core Data Adjusted for Global Mean	1879	290.1
+Ice-Core Data Adjusted for Global Mean	1880	290.8
+Ice-Core Data Adjusted for Global Mean	1881	291.4
+Ice-Core Data Adjusted for Global Mean	1882	292
+Ice-Core Data Adjusted for Global Mean	1883	292.5
+Ice-Core Data Adjusted for Global Mean	1884	292.9
+Ice-Core Data Adjusted for Global Mean	1885	293.3
+Ice-Core Data Adjusted for Global Mean	1886	293.8
+Ice-Core Data Adjusted for Global Mean	1887	294
+Ice-Core Data Adjusted for Global Mean	1888	294.1
+Ice-Core Data Adjusted for Global Mean	1889	294.2
+Ice-Core Data Adjusted for Global Mean	1890	294.4
+Ice-Core Data Adjusted for Global Mean	1891	294.6
+Ice-Core Data Adjusted for Global Mean	1892	294.8
+Ice-Core Data Adjusted for Global Mean	1893	294.7
+Ice-Core Data Adjusted for Global Mean	1894	294.8
+Ice-Core Data Adjusted for Global Mean	1895	294.8
+Ice-Core Data Adjusted for Global Mean	1896	294.9
+Ice-Core Data Adjusted for Global Mean	1897	294.9
+Ice-Core Data Adjusted for Global Mean	1898	294.9
+Ice-Core Data Adjusted for Global Mean	1899	295.3
+Ice-Core Data Adjusted for Global Mean	1900	295.7
+Ice-Core Data Adjusted for Global Mean	1901	296.2
+Ice-Core Data Adjusted for Global Mean	1902	296.6
+Ice-Core Data Adjusted for Global Mean	1903	297
+Ice-Core Data Adjusted for Global Mean	1904	297.5
+Ice-Core Data Adjusted for Global Mean	1905	298
+Ice-Core Data Adjusted for Global Mean	1906	298.4
+Ice-Core Data Adjusted for Global Mean	1907	298.8
+Ice-Core Data Adjusted for Global Mean	1908	299.3
+Ice-Core Data Adjusted for Global Mean	1909	299.7
+Ice-Core Data Adjusted for Global Mean	1910	300.1
+Ice-Core Data Adjusted for Global Mean	1911	300.6
+Ice-Core Data Adjusted for Global Mean	1912	301
+Ice-Core Data Adjusted for Global Mean	1913	301.3
+Ice-Core Data Adjusted for Global Mean	1914	301.4
+Ice-Core Data Adjusted for Global Mean	1915	301.6
+Ice-Core Data Adjusted for Global Mean	1916	302
+Ice-Core Data Adjusted for Global Mean	1917	302.4
+Ice-Core Data Adjusted for Global Mean	1918	302.8
+Ice-Core Data Adjusted for Global Mean	1919	303
+Ice-Core Data Adjusted for Global Mean	1920	303.4
+Ice-Core Data Adjusted for Global Mean	1921	303.7
+Ice-Core Data Adjusted for Global Mean	1922	304.1
+Ice-Core Data Adjusted for Global Mean	1923	304.5
+Ice-Core Data Adjusted for Global Mean	1924	304.9
+Ice-Core Data Adjusted for Global Mean	1925	305.3
+Ice-Core Data Adjusted for Global Mean	1926	305.8
+Ice-Core Data Adjusted for Global Mean	1927	306.2
+Ice-Core Data Adjusted for Global Mean	1928	306.6
+Ice-Core Data Adjusted for Global Mean	1929	307.2
+Ice-Core Data Adjusted for Global Mean	1930	307.5
+Ice-Core Data Adjusted for Global Mean	1931	308
+Ice-Core Data Adjusted for Global Mean	1932	308.3
+Ice-Core Data Adjusted for Global Mean	1933	308.9
+Ice-Core Data Adjusted for Global Mean	1934	309.3
+Ice-Core Data Adjusted for Global Mean	1935	309.7
+Ice-Core Data Adjusted for Global Mean	1936	310.1
+Ice-Core Data Adjusted for Global Mean	1937	310.6
+Ice-Core Data Adjusted for Global Mean	1938	311
+Ice-Core Data Adjusted for Global Mean	1939	311.2
+Ice-Core Data Adjusted for Global Mean	1940	311.3
+Ice-Core Data Adjusted for Global Mean	1941	311
+Ice-Core Data Adjusted for Global Mean	1942	310.7
+Ice-Core Data Adjusted for Global Mean	1943	310.5
+Ice-Core Data Adjusted for Global Mean	1944	310.2
+Ice-Core Data Adjusted for Global Mean	1945	310.3
+Ice-Core Data Adjusted for Global Mean	1946	310.3
+Ice-Core Data Adjusted for Global Mean	1947	310.4
+Ice-Core Data Adjusted for Global Mean	1948	310.5
+Ice-Core Data Adjusted for Global Mean	1949	310.9
+Ice-Core Data Adjusted for Global Mean	1950	311.3
+Ice-Core Data Adjusted for Global Mean	1951	311.8
+Ice-Core Data Adjusted for Global Mean	1952	312.2
+Ice-Core Data Adjusted for Global Mean	1953	312.6
+Ice-Core Data Adjusted for Global Mean	1954	313.2
+Ice-Core Data Adjusted for Global Mean	1955	313.7
+Ice-Core Data Adjusted for Global Mean	1956	314.3
+Ice-Core Data Adjusted for Global Mean	1957	314.8
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1958	315.34
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1959	316.18
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1960	317.07
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1961	317.73
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1962	318.43
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1963	319.08
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1964	319.65
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1965	320.23
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1966	321.59
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1967	322.31
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1968	323.04
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1969	324.23
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1970	325.54
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1971	326.42
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1972	327.45
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1973	329.43
+SIO Mauna Loa & South Pole Adjusted for Global Mean	1974	330.21
+CMDL InSitu Mauna Loa & South Pole	1975	331.36
+CMDL InSitu Mauna Loa & South Pole	1976	331.92
+CMDL InSitu Mauna Loa & South Pole	1977	333.73
+CMDL InSitu Mauna Loa & South Pole	1978	335.42
+CMDL InSitu Mauna Loa & South Pole	1979	337.1
+CMDL InSitu Mauna Loa & South Pole	1980	338.99
+CMDL InSitu Mauna Loa & South Pole	1981	340.36
+CMDL InSitu Mauna Loa & South Pole	1982	341.57
+CMDL Flask Mean of Many Sites	1983	342.53
+CMDL Flask Mean of Many Sites	1984	344.24
+CMDL Flask Mean of Many Sites	1985	345.72
+CMDL Flask Mean of Many Sites	1986	347.15
+CMDL Flask Mean of Many Sites	1987	348.93
+CMDL Flask Mean of Many Sites	1988	351.47
+CMDL Flask Mean of Many Sites	1989	353.15
+CMDL Flask Mean of Many Sites	1990	354.29
+CMDL Flask Mean of Many Sites	1991	355.68
+CMDL Flask Mean of Many Sites	1992	356.42
+CMDL Flask Mean of Many Sites	1993	357.13
+CMDL Flask Mean of Many Sites	1994	358.61
+CMDL Flask Mean of Many Sites	1995	360.67
+CMDL Flask Mean of Many Sites	1996	362.58
+CMDL Flask Mean of Many Sites	1997	363.48
+CMDL Flask Mean of Many Sites	1998	366.27
+CMDL Flask Mean of Many Sites	1999	368.38
+CMDL Flask Mean of Many Sites	2000	369.64
+CMDL Flask Mean of Many Sites	2001	371.15
+CMDL Flask Mean of Many Sites	2002	373.15
+CMDL Flask Mean of Many Sites	2003	375.64
+NOAA/ESRL trends change added to 2003 data	2004	377.44
+NOAA/ESRL trends change added to 2003 data	2005	379.46
+NOAA/ESRL trends change added to 2003 data	2006	381.59
+NOAA/ESRL trends change added to 2003 data	2007	383.37
+NOAA/ESRL trends change added to 2003 data	2008	385.46
+NOAA/ESRL trends change added to 2003 data	2009	386.95
+NOAA/ESRL trends change added to 2003 data	2010	389.21
+NOAA/ESRL trends change added to 2003 data	2011	391.15
+
+
+
+
+----------------------------------------------------------------------------------
+
+
+             Global Mean CO2 Mixing Ratio (ppm): Future Scenarios
+----------------------------------------------------------------------------------
+           Alternative Scenario             
+        Year  MixR      
+----------------------------------------------------------------------------------
+2000	370
+2001	371.7
+2002	373.4
+2003	375.1
+2004	376.8
+2005	378.4
+2006	380.1
+2007	381.7
+2008	383.4
+2009	385
+2010	386.6
+2011	388.2
+2012	389.9
+2013	391.5
+2014	393.1
+2015	394.6
+2016	396.2
+2017	397.8
+2018	399.4
+2019	400.9
+2020	402.5
+2021	404
+2022	405.5
+2023	407
+2024	408.5
+2025	410
+2026	411.5
+2027	413
+2028	414.5
+2029	416
+2030	417.5
+2031	418.9
+2032	420.4
+2033	421.8
+2034	423.2
+2035	424.6
+2036	426.1
+2037	427.5
+2038	428.9
+2039	430.2
+2040	431.6
+2041	433
+2042	434.4
+2043	435.7
+2044	437.1
+2045	438.4
+2046	439.8
+2047	441.1
+2048	442.4
+2049	443.7
+2050	445
+2051	446.2
+2052	447.4
+2053	448.5
+2054	449.6
+2055	450.8
+2056	451.8
+2057	452.9
+2058	453.9
+2059	454.9
+2060	455.9
+2061	456.9
+2062	457.8
+2063	458.7
+2064	459.6
+2065	460.4
+2066	461.3
+2067	462.1
+2068	462.9
+2069	463.6
+2070	464.4
+2071	465.1
+2072	465.7
+2073	466.4
+2074	467
+2075	467.6
+2076	468.2
+2077	468.8
+2078	469.3
+2079	469.9
+2080	470.4
+2081	470.8
+2082	471.2
+2083	471.7
+2084	472.1
+2085	472.4
+2086	472.8
+2087	473.1
+2088	473.4
+2089	473.6
+2090	473.9
+2091	474.1
+2092	474.3
+2093	474.5
+2094	474.6
+2095	474.8
+2096	474.9
+2097	474.9
+2098	475
+2099	475
+
+
+
+----------------------------------------------------------------------------------
+
+
+             Global Mean CO2 Mixing Ratio (ppm): Future Scenarios
+----------------------------------------------------------------------------------
+             2 Degree C Scenario
+             Year  MixR      
+----------------------------------------------------------------------------------
+2000	370
+2001	371.7
+2002	373.4
+2003	375.1
+2004	376.9
+2005	378.7
+2006	380.5
+2007	382.3
+2008	384.2
+2009	386.2
+2010	388
+2011	390
+2012	392
+2013	394
+2014	396
+2015	398
+2016	400.1
+2017	402.3
+2018	404.4
+2019	406.5
+2020	408.7
+2021	410.9
+2022	413.1
+2023	415.4
+2024	417.7
+2025	420
+2026	422.4
+2027	424.7
+2028	427.1
+2029	429.5
+2030	432
+2031	434.4
+2032	436.9
+2033	439.5
+2034	442
+2035	444.5
+2036	447.1
+2037	449.8
+2038	452.5
+2039	455.1
+2040	457.8
+2041	460.5
+2042	463.2
+2043	466
+2044	468.9
+2045	471.7
+2046	474.5
+2047	477.4
+2048	480.3
+2049	483.3
+2050	486.2
+2051	489.2
+2052	492.1
+2053	494.9
+2054	497.6
+2055	500.4
+2056	503
+2057	505.6
+2058	508.1
+2059	510.6
+2060	513
+2061	515.4
+2062	517.7
+2063	519.8
+2064	522
+2065	524.1
+2066	526.2
+2067	528.1
+2068	530.1
+2069	532
+2070	533.8
+2071	535.5
+2072	537.2
+2073	538.8
+2074	540.3
+2075	541.8
+2076	543.3
+2077	544.7
+2078	546
+2079	547.3
+2080	548.5
+2081	549.7
+2082	550.8
+2083	551.7
+2084	552.7
+2085	553.6
+2086	554.5
+2087	555.2
+2088	556
+2089	556.7
+2090	557.2
+2091	557.8
+2092	558.3
+2093	558.7
+2094	559
+2095	559.3
+2096	559.6
+2097	559.8
+2098	560
+2099	560
+
+
+
+
+
+
+----------------------------------------------------------------------------------
+
+
+                              References
+
+1850-1957: D.M. Etheridge, L.P. Steele, R.L. Langenfelds, R.J. Francey,
+   J.-M. Barnola and V.I. Morgan, 1996, J. Geophys. Res., 101, 4115-4128,
+   "Natural and anthroupogenic changes in atmospheric CO2 over the last
+   1000 years from air in Antarctic ice and firn".
+1958-1974: Means of Scripps Institution of Oceanography Continuous Data
+   at Mauna Loa and South Pole provided by KenMaarie (personal communication)
+1975-1982: Means of NOAA/CMDL in-situ data at Mauna Loa and South Pole.
+   (P. Tans and K.W. Thoning, ftp://ftp.cmdl.noaa.gov/ccg/co2/in-situ)
+1983-2003: Global means constructed using about 70 CMDL CCGG Sampling Network
+   station data. (P.P. Tans and T.J. Conway, ftp://ftp.cmdl.noaa.gov/ccg/co2/flask)
+2004-2007: Global mean growth rates. (T. Conway, ftp://ftp.cmdl.noaa.gov/ccg/co2/trends)

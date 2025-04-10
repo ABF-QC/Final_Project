@@ -1,6 +1,11 @@
+import os
 import streamlit as st
 import pandas as pd
-import os
+#import numpy as np
+#import seaborn as sns
+#import matplotlib.pyplot as plt
+#import plotly.express as px
+import plotly.graph_objs as go
 
 #----------------------------
 # Adjust page config
@@ -10,8 +15,7 @@ st.set_page_config(layout="wide")
 #----------------------------
 # Define paths and filenames
 #----------------------------
-data_dir = '../../data/'
-model_dir = '../model/'
+data_dir = 'data/'
 
 climate_file = 'ECCC/processed/daily/daily_processed.csv'
 

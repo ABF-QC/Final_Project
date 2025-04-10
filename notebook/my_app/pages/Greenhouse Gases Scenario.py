@@ -4,10 +4,10 @@
 import os
 import streamlit as st
 import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-import plotly.express as px
+#import numpy as np
+#import seaborn as sns
+#import matplotlib.pyplot as plt
+#import plotly.express as px
 import plotly.graph_objs as go
 
 #----------------------------
@@ -186,7 +186,7 @@ for sc in scenario :
 
 
 # Update layout with title and axis ranges
-fig4.update_layout(title={'text': 'Methane Global mean Concentration (ppm) over the Years',  
+fig4.update_layout(title={'text': 'Methane Global mean Concentration (ppb) over the Years',  
                           'x': 0.5,  
                           'xanchor': 'center', 
                           #'y': 0.95,  # Adjust the vertical position (optional)

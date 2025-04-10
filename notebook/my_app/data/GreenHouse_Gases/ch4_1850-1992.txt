@@ -1,0 +1,71 @@
+Historical CH4 mixing ratios from Law Dome (Antarctica) and Summit (Greenland) ice cores.
+Source:  D.M. Etheridge
+              L.P. Steele
+              R.J. Francey
+              R.L. Langenfelds
+Historical CH4 record from DE08, DE08-2 and DSS ice cores (Antarctica).
+Smoothed line through the ice core data (75 year smoothing spline).  From Figure 2.
+
+Global mixing ratios calculated over the last 1000 years from Antarctic and Greenland
+measurements.
+Smoothing spline fit with 75 year cut off (Table 2, part 1, Etheridge et al., 1998)
+Also appears in IPCC WGI TAR Chapter 4 Figure 1 and Summary for Policymakers Figures 2
+and 11, and as Figure 14-17 IN Chemistry of the Upper and Lower Atmosphere by Barbara J
+Finlayson-Pitts and James N. Pitts Jr.  Academic Press, 2000.
+
+             
+       year                     MixR                     2000A.D.
+       1850                     791.6                         150
+       1860                     805.6                         140
+       1870                     821.0                         130
+       1880                     837.1                         120
+       1890                     856.6                         110
+       1900                     879.4                         100
+       1902                     887.9                          98
+       1904                     896.5                          96
+       1906                     905.3                          94
+       1908                     914.4                          92
+       1910                     924.0                          90
+       1912                     933.9                          88
+       1914                     944.3                          86
+       1916                     955.1                          84
+       1918                     966.4                          82
+       1920                     978.1                          80
+       1922                     989.9                          78
+       1924                    1001.8                          76
+       1926                    1013.6                          74
+       1928                    1025.0                          72
+       1930                    1036.2                          70
+       1932                    1047.2                          68
+       1934                    1058.0                          66
+       1936                    1068.7                          64
+       1938                    1078.9                          62
+       1940                    1088.9                          60
+       1942                    1099.0                          58
+       1944                    1109.4                          56
+       1946                    1120.6                          54
+       1948                    1133.2                          52
+       1950                    1147.5                          50
+       1952                    1163.8                          48
+       1954                    1182.1                          46
+       1956                    1202.4                          44
+       1958                    1224.2                          42
+       1960                    1247.5                          40
+       1962                    1272.2                          38
+       1964                    1298.4                          36
+       1966                    1326.0                          34
+       1968                    1355.3                          32
+       1970                    1386.0                          30
+       1972                    1417.5                          28
+       1974                    1449.3                          26
+       1976                    1481.5                          24
+       1978                    1514.0                          22
+       1980                    1547.1                          20
+       1982                    1580.9                          18
+       1984                    1614.2                          16
+       1986                    1644.9                          14
+       1988                    1671.6                          12
+       1990                    1694.3                          10
+       1992                    1714.0                           8
+   
+ 
