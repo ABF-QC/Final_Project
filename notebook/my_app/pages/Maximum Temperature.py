@@ -274,7 +274,7 @@ fig3.update_traces(
                    '<b>Max Temperature (°C)</b>: %{y:.2f}<extra></extra>')
 
 # Update layout with title and axis ranges
-fig3.update_layout(title={'text': 'Daily Maximum Temperature Forecast by Recurrent Neural Network ())',  
+fig3.update_layout(title={'text': 'Daily Maximum Temperature Forecast by Recurrent Neural Network (RNN)',  
                           'x': 0.5,  
                           'xanchor': 'center'},
                    title_font=dict(size=20, family='Arial'),
