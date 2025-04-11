@@ -6,7 +6,7 @@ Explore over a century of maximum/minimum temperature and precipitation data fro
 
 </br>
 
-Click [here](https://abf-qc-final-project-notebookmy-apphome-cryidk.streamlit.app/Maximum_Temperature) to have access to our Climate App.
+Click [here](https://abf-qc-final-project-notebookmy-apphome-cryidk.streamlit.app) to have access to our Climate App.
 
 </br>
 
